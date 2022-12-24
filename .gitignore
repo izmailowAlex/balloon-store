@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# WebStorm files
+.idea
+
 # testing
 /coverage
 
