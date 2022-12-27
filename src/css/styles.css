@@ -18,3 +18,20 @@
   --grey-dark-color: #909090;
   --grey-light-color: #f6f6f6;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  line-height: 1;
+}
+
+body {
+  color: var(--base-color);
+  font-family: 'Nuninto Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
