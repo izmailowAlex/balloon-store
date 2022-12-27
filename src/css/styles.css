@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Nunito:wght@900&display=swap');
 @import './normalize.css';
+@import './footer.css';
 
 :root {
   --primary-color: #fff068;
@@ -34,4 +35,9 @@ body {
   font-size: 16px;
   font-weight: 400;
   margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
