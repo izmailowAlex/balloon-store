@@ -7,18 +7,18 @@ function Catalog() {
                 <div className="filter__block">
                     <div className="filter__block_category">
                         <span className="filter__block_category-title">Price, $ </span>
-                        <span className="filter__block_category-vector">^</span>
+                        <span className="filter__block_category-vector"></span>
                     </div>
-                    <input className="filter__block_input" type="range"></input>
+                    <input className="filter__block_dual-slide" type="range"></input>
                     <div className="filter__block_wrapper">
-                        <input type="text" placeholder="от 100"></input>
-                        <input type="text" placeholder="до 1000"></input>
+                        <input className="filter__block-input" type="text" placeholder="от 100"></input>
+                        <input className="filter__block-input" type="text" placeholder="до 1000"></input>
                     </div>
                 </div>
                 <div className="filter__block">
                     <div className="filter__block_category">
                         <span className="filter__block_category-title">Categories </span>
-                        <span className="filter__block_category-vector">^</span>
+                        <span className="filter__block_category-vector active"></span>
                     </div>
                     <div className="filter__block_list">
                         <div className="list__item">
@@ -78,7 +78,7 @@ function Catalog() {
                 <div className="filter__block">
                     <div className="filter__block_category">
                         <span className="filter__block_category-title">Materials </span>
-                        <span className="filter__block_category-vector">^</span>
+                        <span className="filter__block_category-vector"></span>
                     </div>
                     <div className="filter__block_list">
                         <div className="list__item">
@@ -94,97 +94,121 @@ function Catalog() {
                 <div className="filter__block">
                     <div className="filter__block_category">
                         <span className="filter__block_category-title">Colors </span>
-                        <span className="filter__block_category-vector">^</span>
+                        <span className="filter__block_category-vector"></span>
                     </div>
-                    <div className="filter__block_list">
-                        <input name="blue" type="checkbox"></input>
-                        <input name="red" type="checkbox"></input>
-                        <input name="green" type="checkbox"></input>
-                        <input name="yellow" type="checkbox"></input>
-                        <input name="purple" type="checkbox"></input>
-                        <input name="black" type="checkbox"></input>
-                        <input name="gray" type="checkbox"></input>
-                        <input name="white" type="checkbox"></input>
+                    <div className="filter__block_list-colors">
+                        <div className="colors__input input-blue" name="blue" type="checkbox"></div>
+                        <div className="colors__input input-red" name="red" type="checkbox"></div>
+                        <div className="colors__input input-green" name="green" type="checkbox"></div>
+                        <div className="colors__input input-yellow" name="yellow" type="checkbox"></div>
+                        <div className="colors__input input-purple" name="purple" type="checkbox"></div>
+                        <div className="colors__input input-black" name="black" type="checkbox"></div>
+                        <div className="colors__input input-grey" name="gray" type="checkbox"></div>
+                        <div className="colors__input input-white" name="white" type="checkbox"></div>
                     </div>
                 </div>
             </div>
             <div className="main__catalog_list list">
                 <div className="list__card">
-                    <div className="list__card_image"></div>
+                    <div className="list__card_image">
+                        <img className="list__card_image-img" src="../images/cat.png" alt=""/>
+                    </div>
                     <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
                     <div className="list__card_bottom">
                         <span className="list__card_bottom-price">$ 5</span>
-                        <button className="list__card_bottom-minus">-</button>
-                        <span className="list__card_bottom-count">20</span>
-                        <button className="list__card_bottom-plus">+</button>
-                        <button className="list__card_bottom-basket">
-                            <image className="list__card_bottom-basket__img" />
-                        </button>
+                        <span className="list__card_bottom-count">
+                            <button className="count-minus">-</button>
+                            <span className="count">20</span>
+                            <button className="count-plus">+</button>
+                        </span>
+                        <span className="list__card_bottom-basket">
+                            <span className="basket__img"></span>
+                        </span>
                     </div>
                 </div>
                 <div className="list__card">
-                    <div className="list__card_image"></div>
+                    <div className="list__card_image">
+                        <img className="list__card_image-img" src="../images/cat.png" alt=""/>
+                    </div>
                     <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
                     <div className="list__card_bottom">
                         <span className="list__card_bottom-price">$ 5</span>
-                        <button className="list__card_bottom-minus">-</button>
-                        <span className="list__card_bottom-count">20</span>
-                        <button className="list__card_bottom-plus">+</button>
-                        <button className="list__card_bottom-basket">
-                            <image className="list__card_bottom-basket__img" />
-                        </button>
+                        <span className="list__card_bottom-count">
+                            <button className="count-minus">-</button>
+                            <span className="count">20</span>
+                            <button className="count-plus">+</button>
+                        </span>
+                        <span className="list__card_bottom-basket">
+                            <span className="basket__img"></span>
+                        </span>
                     </div>
                 </div>
                 <div className="list__card">
-                    <div className="list__card_image"></div>
+                    <div className="list__card_image">
+                        <img className="list__card_image-img" src="../images/cat.png" alt=""/>
+                    </div>
                     <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
                     <div className="list__card_bottom">
                         <span className="list__card_bottom-price">$ 5</span>
-                        <button className="list__card_bottom-minus">-</button>
-                        <span className="list__card_bottom-count">20</span>
-                        <button className="list__card_bottom-plus">+</button>
-                        <button className="list__card_bottom-basket">
-                            <image className="list__card_bottom-basket__img" />
-                        </button>
+                        <span className="list__card_bottom-count">
+                            <button className="count-minus">-</button>
+                            <span className="count">20</span>
+                            <button className="count-plus">+</button>
+                        </span>
+                        <span className="list__card_bottom-basket">
+                            <span className="basket__img"></span>
+                        </span>
                     </div>
                 </div>
                 <div className="list__card">
-                    <div className="list__card_image"></div>
+                    <div className="list__card_image">
+                        <img className="list__card_image-img" src="../images/cat.png" alt=""/>
+                    </div>
                     <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
                     <div className="list__card_bottom">
                         <span className="list__card_bottom-price">$ 5</span>
-                        <button className="list__card_bottom-minus">-</button>
-                        <span className="list__card_bottom-count">20</span>
-                        <button className="list__card_bottom-plus">+</button>
-                        <button className="list__card_bottom-basket">
-                            <image className="list__card_bottom-basket__img" />
-                        </button>
+                        <span className="list__card_bottom-count">
+                            <button className="count-minus">-</button>
+                            <span className="count">20</span>
+                            <button className="count-plus">+</button>
+                        </span>
+                        <span className="list__card_bottom-basket">
+                            <span className="basket__img"></span>
+                        </span>
                     </div>
                 </div>
                 <div className="list__card">
-                    <div className="list__card_image"></div>
+                    <div className="list__card_image">
+                        <img className="list__card_image-img" src="../images/cat.png" alt=""/>
+                    </div>
                     <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
                     <div className="list__card_bottom">
                         <span className="list__card_bottom-price">$ 5</span>
-                        <button className="list__card_bottom-minus">-</button>
-                        <span className="list__card_bottom-count">20</span>
-                        <button className="list__card_bottom-plus">+</button>
-                        <button className="list__card_bottom-basket">
-                            <image className="list__card_bottom-basket__img" />
-                        </button>
+                        <span className="list__card_bottom-count">
+                            <button className="count-minus">-</button>
+                            <span className="count">20</span>
+                            <button className="count-plus">+</button>
+                        </span>
+                        <span className="list__card_bottom-basket">
+                            <span className="basket__img"></span>
+                        </span>
                     </div>
                 </div>
                 <div className="list__card">
-                    <div className="list__card_image"></div>
+                    <div className="list__card_image">
+                        <img className="list__card_image-img" src="../images/cat.png" alt=""/>
+                    </div>
                     <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
                     <div className="list__card_bottom">
                         <span className="list__card_bottom-price">$ 5</span>
-                        <button className="list__card_bottom-minus">-</button>
-                        <span className="list__card_bottom-count">20</span>
-                        <button className="list__card_bottom-plus">+</button>
-                        <button className="list__card_bottom-basket">
-                            <image className="list__card_bottom-basket__img" />
-                        </button>
+                        <span className="list__card_bottom-count">
+                            <button className="count-minus">-</button>
+                            <span className="count">20</span>
+                            <button className="count-plus">+</button>
+                        </span>
+                        <span className="list__card_bottom-basket">
+                            <span className="basket__img"></span>
+                        </span>
                     </div>
                 </div>
             </div>
