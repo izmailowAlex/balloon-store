@@ -2,7 +2,7 @@ function Catalog() {
     return (
       <div className="main__catalog">
         <h2 className="main__catalog-title">Каталог шаров</h2>
-        <div className="main__catalog_contain">
+        <div className="main__catalog-contain">
             <div className="main__catalog-filter filter">
                 <div className="filter__block">
                     <div className="filter__block_category">

@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className="balloon__footer">Footer</div>
+    <div className="balloon__footer container">Footer</div>
   );
 }
 
