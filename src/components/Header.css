@@ -39,6 +39,7 @@
 
 .header__order-basket {
     position: relative;
+    cursor: pointer;
 }
 
 .header__order-basket::before {

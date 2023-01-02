@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './Main/Home';
 import Catalog from './Main/Catalog';
 
-function App() {
+function Main() {
   return (
     <div className="main container">
         <Routes>
@@ -14,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;
