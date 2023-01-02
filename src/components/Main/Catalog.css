@@ -1,9 +1,9 @@
 .main__catalog {
-  padding: 50px 0;
+  padding: 30px 0;
 }
 
 .main__catalog-title {
-  font-size: 26px;
+  margin: 0 0 40px 0;
 }
 
 .main__catalog-contain {
@@ -30,7 +30,8 @@
 }
 
 .filter__block_category-title {
-  font-weight: bold;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-weight: 800;
 }
 
 .filter__block_category-vector {
@@ -208,7 +209,7 @@
   z-index: -1;
   transition: transform 0.3s ease-in-out;
 }
-.list__card:hover .list__cart-button:before,
+
 .list__cart-button:hover:before {
   transform: scale(2.4);
 }
