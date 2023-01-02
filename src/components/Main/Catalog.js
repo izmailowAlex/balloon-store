@@ -1,4 +1,5 @@
 import Counter from "../UI/Counter/Counter";
+import Checkbox from "../UI/Checkbox/Checkbox";
 
 function Catalog() {
   return (
