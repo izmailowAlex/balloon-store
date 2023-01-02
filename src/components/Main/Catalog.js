@@ -7,7 +7,7 @@ function Catalog() {
       <div className="main__catalog-contain">
         <div className="main__catalog-filter filter">
           <div className="filter__block">
-            <div className="filter__block_category">
+            <div className="filter__category">
               <span className="filter__block_category-title">Price, $</span>
               <span className="filter__block_category-vector"></span>
             </div>
@@ -18,7 +18,7 @@ function Catalog() {
             </div>
           </div>
           <div className="filter__block">
-            <div className="filter__block_category">
+            <div className="filter__category">
               <span className="filter__block_category-title">Categories</span>
               <span className="filter__block_category-vector active"></span>
             </div>
@@ -65,7 +65,7 @@ function Catalog() {
             </ul>
           </div>
           <div className="filter__block">
-            <div className="filter__block_category">
+            <div className="filter__category">
               <span className="filter__block_category-title">Materials</span>
               <span className="filter__block_category-vector"></span>
             </div>
@@ -79,7 +79,7 @@ function Catalog() {
             </ul>
           </div>
           <div className="filter__block">
-            <div className="filter__block_category">
+            <div className="filter__category">
               <span className="filter__block_category-title">Colors</span>
               <span className="filter__block_category-vector"></span>
             </div>
