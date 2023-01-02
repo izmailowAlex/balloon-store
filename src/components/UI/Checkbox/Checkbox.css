@@ -39,7 +39,7 @@
   width: 20px;
   height: 20px;
   margin-right: 8px;
-  color: #b4b4b4;
+  color: var(--grey-color);
 }
 
 .checkbox__icon::before {
@@ -48,7 +48,7 @@
   width: 0;
   height: 0;
   display: block;
-  background-color: #F6F6F6;
+  background-color: var(--grey-light-color);
   border-radius: 50%;
   flex-shrink: 0;
   z-index: -1;
@@ -65,7 +65,7 @@
   display: block;
   width: 20px;
   height: 20px;
-  border: 2px solid #b4b4b4;
+  border: 2px solid var(--grey-color);
   border-radius: 4px;
   z-index: -1;
   transition: all .3s ease-in-out;
