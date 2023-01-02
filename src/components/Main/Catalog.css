@@ -67,43 +67,10 @@
   gap: 10px;
 }
 
-.colors__input {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid #999;
-}
-
-.input-blue {
-  background-color: var(--blue-color);
-}
-
-.input-red {
-  background-color: var(--red-color);
-}
-
-.input-green {
-  background-color: var(--green-color);
-}
-
-.input-yellow {
-  background-color: var(--yellow-color);
-}
-
-.input-purple {
-  background-color: var(--purple-color);
-}
-
-.input-black {
-  background-color: var(--black-color);
-}
-
-.input-grey {
-  background-color: var(--grey-color);
-}
-
-.input-white {
-  background-color: var(--white-color);
+.filter__colors-item {
+  font-size: 0;
+  width: 20px;
+  height: 20px;
 }
 
 .list {
