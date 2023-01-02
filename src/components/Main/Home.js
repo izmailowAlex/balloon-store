@@ -1,4 +1,3 @@
-// import Cover from '../../../public/images/balloon-cover.jpg';
 import './Home.css';
 
 function Home() {
