@@ -12,15 +12,11 @@
 }
 
 .filter {
-  max-width: 250px;
+  max-width: 270px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
 }
-
-/* .filter__block {
-
-} */
 
 .filter__block_category {
   display: flex;
@@ -63,12 +59,6 @@
 .filter__block_list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-.list__item {
-  display: flex;
-  gap: 5px;
 }
 
 .filter__block_list-colors {
