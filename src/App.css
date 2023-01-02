@@ -1,0 +1,39 @@
+.balloon {
+  position: relative;
+  overflow: hidden;
+}
+
+.balloon__circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: -1000;
+}
+
+.balloon_red {
+  background-color: rgba(255, 222, 230, 0.2);
+  border: 8px solid rgba(255, 203, 215, 0.2);
+  width: 850px;
+  height: 850px;
+  top: -400px;
+  right: -200px;
+}
+
+.balloon_yellow {
+  background-color: rgba(255, 249, 199, 0.2);
+  border: 8px solid rgba(255, 246, 163, 0.2);
+  width: 1200px;
+  height: 1200px;
+  top: calc(50% - 500px);
+  left: -700px;
+}
+
+.balloon_blue {
+  background-color: rgba(192, 255, 253, 0.2);
+  border: 8px solid rgba(169, 254, 252, 0.2);
+  width: 725px;
+  height: 725px;
+  bottom: -360px;
+  right: -240px;
+}
