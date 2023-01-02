@@ -18,8 +18,7 @@
 }
 
 .header__logo {
-    position: absolute;
-    left: calc(50% - 75px);
+    display: block;
 }
 
 .header__order {
