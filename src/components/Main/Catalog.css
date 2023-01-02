@@ -198,9 +198,9 @@
 }
 
 .basket__img {
-    width: 22px;
+    width: 18px;
     height: 20px;
     display: inline-block;
-    background-image: url(../../../public/images/bag.png);
+    background-image: url('../../images/bag-shopping.svg');
     background-repeat: no-repeat;
 }
