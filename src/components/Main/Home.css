@@ -1,0 +1,38 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 190px);
+}
+
+.home__cover {
+  width: 600px;
+  height: 600px;
+}
+
+.home__cover-image {
+  border-radius: 50%;
+}
+
+.home__content {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 100px;
+}
+
+.home__title {
+  width: 400px;
+  margin: 0 0 30px 0;
+}
+
+.home__description {
+  width: 300px;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.5;
+  margin: 0 0 30px 0;
+}
