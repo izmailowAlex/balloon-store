@@ -31,7 +31,7 @@
 .header__order-search {
     border: 0;
     outline: none;
-    background-image: url(./../../public/images/glass.png);
+    background-image: url(../images/magnifying-glass.svg);
     background-repeat: no-repeat;
     background-position: center right;
     cursor: pointer;
