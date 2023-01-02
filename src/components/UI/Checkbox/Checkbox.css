@@ -1,0 +1,109 @@
+.checkbox {
+  display: inline-block;
+  position: relative;
+  padding: 8px 0;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox__wrapper {
+  display: flex;
+  max-width: 100%;
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+}
+
+.checkbox__icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  color: #b4b4b4;
+}
+
+.checkbox__icon::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: block;
+  background-color: #F6F6F6;
+  border-radius: 50%;
+  flex-shrink: 0;
+  z-index: -1;
+  transition: opacity .3s linear,width .3s linear,height .3s linear,background-color .3s linear;
+  opacity: 0;
+}
+
+.checkbox__icon::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #b4b4b4;
+  border-radius: 4px;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+.checkbox__svg {
+  fill: currentColor;
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: opacity .3s ease-in-out;
+  opacity: 0;
+}
+
+.checkbox:hover .checkbox__svg {
+  opacity: 1;
+}
+
+.checkbox:hover .checkbox__icon::before {
+  width: 36px;
+  height: 36px;
+  opacity: 1;
+}
+
+.checkbox__input:checked ~ .checkbox__wrapper .checkbox__svg {
+  opacity: 1;
+}
+
+.checkbox__input:checked ~ .checkbox__wrapper .checkbox__icon {
+  color: #fff;
+}
+
+.checkbox__input:checked ~ .checkbox__wrapper .checkbox__icon::before {
+  background-color: #FFE9EE;
+}
+
+.checkbox__input:checked ~ .checkbox__wrapper .checkbox__icon::after {
+  border-color: #FD7898;
+  background-color: #FD7898;
+}
