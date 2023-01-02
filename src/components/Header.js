@@ -4,13 +4,13 @@ import Order from './Header/Order';
 import Logo from '../images/logo.svg';
 
 function Header() {
-    return (
-      <div className="header container">
-        <Nav />
-        <Link className="header__logo" to='/'><img src={Logo} alt="Balloon Logo"/></Link>
-        <Order />
-      </div>
-    );
-  }
+  return (
+    <div className="header container">
+      <Nav />
+      <Link className="header__logo" to='/'><img src={Logo} alt="Balloon Logo"/></Link>
+      <Order />
+    </div>
+  );
+}
   
-  export default Header;
+export default Header;
