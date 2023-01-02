@@ -121,9 +121,7 @@ function Catalog() {
                             <span className="count">20</span>
                             <button className="count-plus">+</button>
                         </span>
-                        <span className="list__card_bottom-basket">
-                            <span className="basket__img"></span>
-                        </span>
+                        <button className="list__cart-button"></button>
                     </div>
                 </div>
                 <div className="list__card">
@@ -138,9 +136,7 @@ function Catalog() {
                             <span className="count">20</span>
                             <button className="count-plus">+</button>
                         </span>
-                        <span className="list__card_bottom-basket">
-                            <span className="basket__img"></span>
-                        </span>
+                        <button className="list__cart-button"></button>
                     </div>
                 </div>
                 <div className="list__card">
@@ -155,9 +151,7 @@ function Catalog() {
                             <span className="count">20</span>
                             <button className="count-plus">+</button>
                         </span>
-                        <span className="list__card_bottom-basket">
-                            <span className="basket__img"></span>
-                        </span>
+                        <button className="list__cart-button"></button>
                     </div>
                 </div>
                 <div className="list__card">
@@ -172,9 +166,7 @@ function Catalog() {
                             <span className="count">20</span>
                             <button className="count-plus">+</button>
                         </span>
-                        <span className="list__card_bottom-basket">
-                            <span className="basket__img"></span>
-                        </span>
+                        <button className="list__cart-button"></button>
                     </div>
                 </div>
                 <div className="list__card">
@@ -189,9 +181,7 @@ function Catalog() {
                             <span className="count">20</span>
                             <button className="count-plus">+</button>
                         </span>
-                        <span className="list__card_bottom-basket">
-                            <span className="basket__img"></span>
-                        </span>
+                        <button className="list__cart-button"></button>
                     </div>
                 </div>
                 <div className="list__card">
@@ -206,9 +196,7 @@ function Catalog() {
                             <span className="count">20</span>
                             <button className="count-plus">+</button>
                         </span>
-                        <span className="list__card_bottom-basket">
-                            <span className="basket__img"></span>
-                        </span>
+                        <button className="list__cart-button"></button>
                     </div>
                 </div>
             </div>
