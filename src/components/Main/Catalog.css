@@ -34,14 +34,14 @@
 }
 
 .filter__block_category-vector {
-    background-image: url(./../../../public/images/ico_vector.png);
-    width: 10px;
-    height: 6px;
+    background-image: url('../../images/chevron-down.svg');
+    width: 16px;
+    height: 16px;
     display: inline-block;
 }
 
 .active {
-    transform: rotateX(180deg);
+    background-image: url('../../images/chevron-up.svg');
 }
 
 .filter__block_wrapper {
