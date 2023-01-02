@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Nunito:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;800&family=Nunito:wght@900&display=swap');
 @import './normalize.css';
 @import './../components/Main/Catalog.css';
 @import './../components/Header.css';
@@ -33,10 +33,40 @@ html {
 
 body {
   color: var(--base-color);
-  font-family: 'Nuninto Sans', Arial, sans-serif;
+  font-family: 'Nunito Sans', Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Nunito, Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin: 0;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 32px;
 }
 
 .container {
