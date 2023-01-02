@@ -84,16 +84,32 @@ function Catalog() {
               <span className="filter__block_category-title">Colors</span>
               <span className="filter__block_category-vector"></span>
             </div>
-            <div className="filter__block_list-colors">
-              <div className="colors__input input-blue" name="blue" type="checkbox"></div>
-              <div className="colors__input input-red" name="red" type="checkbox"></div>
-              <div className="colors__input input-green" name="green" type="checkbox"></div>
-              <div className="colors__input input-yellow" name="yellow" type="checkbox"></div>
-              <div className="colors__input input-purple" name="purple" type="checkbox"></div>
-              <div className="colors__input input-black" name="black" type="checkbox"></div>
-              <div className="colors__input input-grey" name="gray" type="checkbox"></div>
-              <div className="colors__input input-white" name="white" type="checkbox"></div>
-            </div>
+            <ul className="filter__block_list-colors">
+              <li className="filter__colors-item">
+                <Checkbox className="checkbox_colors checkbox_blue"></Checkbox>
+              </li>
+              <li className="filter__colors-item">
+                <Checkbox className="checkbox_colors checkbox_red"></Checkbox>
+              </li>
+              <li className="filter__colors-item">
+                <Checkbox className="checkbox_colors checkbox_green"></Checkbox>
+              </li>
+              <li className="filter__colors-item">
+                <Checkbox className="checkbox_colors checkbox_yellow"></Checkbox>
+              </li>
+              <li className="filter__colors-item">
+                <Checkbox className="checkbox_colors checkbox_purple"></Checkbox>
+              </li>
+              <li className="filter__colors-item">
+                <Checkbox className="checkbox_colors checkbox_black"></Checkbox>
+              </li>
+              <li className="filter__colors-item">
+                <Checkbox className="checkbox_colors checkbox_grey"></Checkbox>
+              </li>
+              <li className="filter__colors-item" >
+                <Checkbox className="checkbox_colors checkbox_white"></Checkbox>
+              </li>
+            </ul>
           </div>
         </div>
         <div className="main__catalog_list list">
