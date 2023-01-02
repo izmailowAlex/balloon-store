@@ -1,0 +1,79 @@
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  width: 90px;
+  height: 20px;
+}
+
+.counter__value {
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d3a47;
+  text-align: center;
+  padding: 5px;
+  width: 50px;
+  height: 20px;
+  border: none;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.counter__value:focus {
+  outline: none;
+  background-color: #ffffff;
+}
+
+.counter__value::-webkit-outer-spin-button,
+.counter__value::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.counter__button-minus,
+.counter__button-plus {
+  color: #B4B4B4;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease-in-out,
+  box-shadow 0.3s linear,
+  background-color 0.3s ease-in-out;
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.counter__button-minus:focus,
+.counter__button-plus:focus {
+  outline: none;
+  color: #323031;
+  background-color: #FFFCE0;
+  box-shadow: 0 0 0 5px #FFFCE0;
+}
+
+.counter__button-minus:hover,
+.counter__button-plus:hover {
+  color: #323031;
+  background-color: #FFF068;
+  box-shadow: 0 0 0 5px #FFFCE0;
+}
+
+.counter__svg {
+  fill: currentColor;
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: opacity .3s ease-in-out;
+  opacity: 1;
+}
