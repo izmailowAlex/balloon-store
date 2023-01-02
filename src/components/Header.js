@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Nav from './Header/Nav';
 import Order from './Header/Order';
 import Logo from '../images/logo.svg';
+import './Header.css';
 
 function Header() {
   return (
