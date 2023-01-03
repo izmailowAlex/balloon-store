@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    height: 97px;
 }
 
 .header__nav-list {
@@ -19,4 +20,8 @@
 
 .header__logo {
     display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
