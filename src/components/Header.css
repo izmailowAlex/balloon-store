@@ -7,17 +7,6 @@
   height: 97px;
 }
 
-.header__nav-list {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.header__nav-list li a {
-  text-decoration: none;
-  color: var(--base-color);
-}
-
 .header__logo {
   display: block;
   position: absolute;
