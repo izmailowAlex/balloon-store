@@ -2,15 +2,18 @@ import { Routes, Route } from 'react-router-dom';
 
 import Home from './Main/Home';
 import Catalog from './Main/Catalog';
+import './Main.css';
 
 function Main() {
   return (
-    <div className="main container">
+    <main className="main">
+      <div className="main__container container">
         <Routes>
-            <Route path='/home/' element={<Home />} />
-            <Route path='/catalog/' element={<Catalog />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/catalog/' element={<Catalog />} />
         </Routes>
-    </div>
+      </div>
+    </main>
   );
 }
 
