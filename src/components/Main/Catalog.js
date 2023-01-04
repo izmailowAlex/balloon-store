@@ -121,7 +121,7 @@ function Catalog() {
             <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
             <div className="list__card_bottom">
               <h3 className="list__card_bottom-price">$ 5</h3>
-              <Counter/>
+              <Counter quantity={20}/>
               <button className="list__cart-button"></button>
             </div>
           </div>
@@ -132,7 +132,7 @@ function Catalog() {
             <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
             <div className="list__card_bottom">
               <span className="list__card_bottom-price">$ 5</span>
-              <Counter/>
+              <Counter quantity={20}/>
               <button className="list__cart-button"></button>
             </div>
           </div>
@@ -143,7 +143,7 @@ function Catalog() {
             <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
             <div className="list__card_bottom">
               <span className="list__card_bottom-price">$ 5</span>
-              <Counter/>
+              <Counter quantity={20}/>
               <button className="list__cart-button"></button>
             </div>
           </div>
@@ -154,7 +154,7 @@ function Catalog() {
             <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
             <div className="list__card_bottom">
               <span className="list__card_bottom-price">$ 5</span>
-              <Counter/>
+              <Counter quantity={20}/>
               <button className="list__cart-button"></button>
             </div>
           </div>
@@ -165,7 +165,7 @@ function Catalog() {
             <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
             <div className="list__card_bottom">
               <span className="list__card_bottom-price">$ 5</span>
-              <Counter/>
+              <Counter quantity={20}/>
               <button className="list__cart-button"></button>
             </div>
           </div>
@@ -176,7 +176,7 @@ function Catalog() {
             <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
             <div className="list__card_bottom">
               <span className="list__card_bottom-price">$ 5</span>
-              <Counter/>
+              <Counter quantity={20}/>
               <button className="list__cart-button"></button>
             </div>
           </div>
