@@ -1,4 +1,4 @@
-import Filter from "./CatalogParts/Filter";
+import Filter from "./CatalogParts/Filter/Filter";
 import CatalogListCards from "./CatalogParts/CatalogListCards";
 import './Catalog.css';
 

@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../../../App';
-import Checkbox from './../../UI/Checkbox/Checkbox';
-import Dualslider from "../../UI/Dualslider/Dualslider";
+import { AppContext } from '../../../../App';
+import Checkbox from '../../../UI/Checkbox/Checkbox';
+import Dualslider from "../../../UI/Dualslider/Dualslider";
+import './Filter.css';
 
 function Filter() {
   const {productsLibrary, setProductsLibrary} = useContext(AppContext);
