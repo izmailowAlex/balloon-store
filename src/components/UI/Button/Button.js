@@ -1,13 +1,14 @@
 import './Button.css';
+import {Link} from "react-router-dom";
 
-function Button({children, className, href, button}) {
+function Button({children, className, to, button}) {
   const classname = className ? 'button ' + className : 'button';
 
   return (
     <>
       {button
         ? <button className={classname}>{children}</button>
-        : <a className={classname} href={href}>{children}</a>
+        : <Link className={classname} to={to}>{children}</Link>
       }
     </>
   );
