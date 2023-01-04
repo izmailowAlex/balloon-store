@@ -1,5 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import './Dualslider.css';
+import Input from "../Input/Input";
 
 function Dualslider({min, max}) {
   const [minVal, setMinVal] = useState(min);
@@ -66,8 +67,8 @@ function Dualslider({min, max}) {
       <div className="slider">
         <div className="slider__track" />
         <div className="slider__range" ref={range} />
-        <div className="slider__left-value">{minVal}</div>
-        <div className="slider__right-value">{maxVal}</div>
+        <Input className="slider__min-value" value={minVal} />
+        <Input className="slider__max-value" value={maxVal} />
       </div>
     </div>
   );
