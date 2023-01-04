@@ -1,5 +1,5 @@
 import './Home.css';
-import Button from "../UI/Button/Button";
+import Button from "../../UI/Button/Button";
 
 function Home() {
   return (

@@ -1,4 +1,4 @@
-import Counter from './../../../UI/Counter/Counter';
+import Counter from '../../../../UI/Counter/Counter';
 import './Card.css';
 
 function Card({product}) {

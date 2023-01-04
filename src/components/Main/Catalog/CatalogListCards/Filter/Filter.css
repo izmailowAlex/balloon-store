@@ -18,14 +18,14 @@
 }
 
 .filter__block_category-vector {
-  background-image: url('../../../../images/chevron-down.svg');
+  background-image: url('../../../../../images/chevron-down.svg');
   width: 16px;
   height: 16px;
   display: inline-block;
 }
 
 .active {
-  background-image: url('../../../../images/chevron-up.svg');
+  background-image: url('../../../../../images/chevron-up.svg');
 }
 
 .filter__block_wrapper {

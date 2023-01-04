@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppContext } from "../../../App";
+import { AppContext } from "../../../../App";
 import Card from "./Card/Card";
 
 function CatalogListCards() {

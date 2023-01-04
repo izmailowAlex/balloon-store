@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from './Main/Home';
-import Catalog from './Main/Catalog';
-import Cart from './Main/Cart';
-import ProductView from './Main/ProductView';
-import Checkout from "./Main/Checkout";
-import Page404 from "./Main/Page404";
+import Home from './Home/Home';
+import Catalog from './Catalog/Catalog';
+import Cart from './Cart/Cart';
+import ProductView from './ProductView/ProductView';
+import Checkout from "./Checkout/Checkout";
+import Page404 from "./Page404/Page404";
 import './Main.css';
 
 function Main() {

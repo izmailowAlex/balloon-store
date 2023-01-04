@@ -1,8 +1,8 @@
 import './Cart.css';
-import Button from "../UI/Button/Button";
-import Input from "../UI/Input/Input";
-import Checkbox from "../UI/Checkbox/Checkbox";
-import Product from "../Product/Product";
+import Button from "../../UI/Button/Button";
+import Input from "../../UI/Input/Input";
+import Checkbox from "../../UI/Checkbox/Checkbox";
+import Product from "./Product/Product";
 
 function Cart() {
   return (
@@ -12,7 +12,7 @@ function Cart() {
         <div className="cart__table">
           <div className="cart__list-head">
             <span className="cart__select-all"><Checkbox /></span>
-            <a className="cart__cart-clear" href="#">Очистить корзину</a>
+            <a className="cart__cart-clear" href="src/components/Main/Cart/Cart#">Очистить корзину</a>
           </div>
           <ul className="cart__list">
             <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} count={1}/></li>

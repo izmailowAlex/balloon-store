@@ -1,5 +1,5 @@
 import './Page404.css';
-import Button from "../UI/Button/Button";
+import Button from "../../UI/Button/Button";
 
 function Page404() {
   return (

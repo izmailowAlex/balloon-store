@@ -1,6 +1,6 @@
 import './Product.css';
-import Checkbox from "../UI/Checkbox/Checkbox";
-import Counter from "../UI/Counter/Counter";
+import Checkbox from "../../../UI/Checkbox/Checkbox";
+import Counter from "../../../UI/Counter/Counter";
 
 function Product({image, name, price, count}) {
   return (

@@ -6,7 +6,7 @@ function Footer() {
       <div className="footer__container container">
         <div className="contributors">
           <span className="contributors__item">
-            <a href="https://rs.school/js/"
+            <a href="src/components/Footer/Footer"
                className="contributors__link rsschool" rel="noreferrer" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 30">
                 <path
@@ -16,7 +16,7 @@ function Footer() {
             </a>
           </span>
           <span className="contributors__item">
-            <a href="https://github.com/"
+            <a href="src/components/Footer/Footer"
                className="contributors__link github" rel="noreferrer" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg"
                    viewBox="0 0 30 30">

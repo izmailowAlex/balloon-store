@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import Nav from './Header/Nav';
-import Logo from '../images/logo.svg';
+import Nav from './Nav/Nav';
+import Logo from '../../images/logo.svg';
 import './Header.css';
-import Actions from "./Header/Actions";
+import Actions from "./Actions/Actions";
 
 function Header() {
   return (
