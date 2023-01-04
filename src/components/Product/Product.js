@@ -6,7 +6,7 @@ function Product({image, name, price, quantity}) {
   return (
     <div className="product">
       <span className="product__checkbox"><Checkbox /></span>
-      <img className="product__image" src={image}></img>
+      <img className="product__image" src={image} alt="Product"></img>
       <span className="product__name">{name}</span>
       <span className="product__price">{price}</span>
       <span className="product__quantity"><Counter quantity={quantity}/></span>
