@@ -1,16 +1,25 @@
 import { Link } from 'react-router-dom';
+import './Nav.css';
 
-function Header() {
-    return (
-        <nav className="header__nav">
-            <ul className="header__nav-list">
-                <li><Link to="catalog">Каталог</Link></li>
-                <li><Link to="home">Доставка</Link></li>
-                <li><Link to="#">Контакты</Link></li>
-                <li><Link to="#">Галерея</Link></li>
-            </ul>
-        </nav>
-    );
+function Nav() {
+  return (
+    <nav className="nav">
+      <ul className="nav__list">
+        <li className="nav__item">
+          <Link className="nav__link" to="/catalog/">Каталог</Link>
+        </li>
+        <li className="nav__item">
+          <Link className="nav__link" to="/productview/">Товар</Link>
+        </li>
+        <li className="nav__item">
+          <Link className="nav__link" to="/checkout/">Оформление</Link>
+        </li>
+        <li className="nav__item">
+          <Link className="nav__link" to="/page404/">Страница 404</Link>
+        </li>
+      </ul>
+    </nav>
+  );
 }
   
-export default Header;
+export default Nav;

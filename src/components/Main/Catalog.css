@@ -9,10 +9,11 @@
 .main__catalog-contain {
   display: flex;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .filter {
-  max-width: 270px;
+  width: 270px;
   display: flex;
   flex-direction: column;
   gap: 40px;

@@ -1,0 +1,74 @@
+.cart {
+  padding: 30px 0;
+}
+
+.cart__title {
+  margin: 0 0 40px 0;
+}
+
+.cart__content {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.cart__table {
+  width: 780px;
+  background-color: var(--white-color);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.cart__list {
+  display: grid;
+  gap: 40px;
+}
+
+.cart__list-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 40px 0;
+}
+
+.cart__cart-clear {
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--base-color);
+  text-decoration: underline;
+}
+
+.cart__cart-clear:hover {
+  text-decoration: none;
+}
+
+.cart__summary {
+  width: 380px;
+  background-color: var(--white-color);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.cart__summary-title {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+}
+
+.cart__promocode {
+  margin: 0 0 20px 0;
+}
+
+.cart__amount {
+  font-family: Nunito, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -2px;
+  margin: 0 0 20px 0;
+}
+
+.cart__checkout {
+  width: 100%;
+}

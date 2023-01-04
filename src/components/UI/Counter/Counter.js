@@ -1,6 +1,6 @@
 import './Counter.css';
 
-function Counter() {
+function Counter({quantity}) {
   return (
     <div className="counter">
       <button className="counter__button-minus">
@@ -8,7 +8,7 @@ function Counter() {
           <use href="#minus"></use>
         </svg>
       </button>
-      <input className="counter__value" type="text" value="20"/>
+      <input className="counter__value" type="text" value={quantity}/>
       <button className="counter__button-plus">
         <svg className="counter__svg">
           <use href="#plus"></use>

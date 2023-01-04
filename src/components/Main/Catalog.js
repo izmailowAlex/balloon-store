@@ -1,5 +1,6 @@
 import Counter from "../UI/Counter/Counter";
 import Checkbox from "../UI/Checkbox/Checkbox";
+import Dualslider from "../UI/Dualslider/Dualslider";
 import './Catalog.css';
 
 function Catalog() {
@@ -13,11 +14,7 @@ function Catalog() {
               <span className="filter__block_category-title">Price, $</span>
               <span className="filter__block_category-vector"></span>
             </div>
-            <input className="filter__block_dual-slide" type="range"></input>
-            <div className="filter__block_wrapper">
-              <input className="filter__block-input" type="text" placeholder="от 100"></input>
-              <input className="filter__block-input" type="text" placeholder="до 1000"></input>
-            </div>
+            <Dualslider min={0} max={1000} />
           </div>
           <div className="filter__block">
             <div className="filter__category">
@@ -121,7 +118,7 @@ function Catalog() {
             <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
             <div className="list__card_bottom">
               <h3 className="list__card_bottom-price">$ 5</h3>
-              <Counter/>
+              <Counter quantity={20}/>
               <button className="list__cart-button"></button>
             </div>
           </div>
@@ -132,7 +129,7 @@ function Catalog() {
             <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
             <div className="list__card_bottom">
               <span className="list__card_bottom-price">$ 5</span>
-              <Counter/>
+              <Counter quantity={20}/>
               <button className="list__cart-button"></button>
             </div>
           </div>
@@ -143,7 +140,7 @@ function Catalog() {
             <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
             <div className="list__card_bottom">
               <span className="list__card_bottom-price">$ 5</span>
-              <Counter/>
+              <Counter quantity={20}/>
               <button className="list__cart-button"></button>
             </div>
           </div>
@@ -154,7 +151,7 @@ function Catalog() {
             <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
             <div className="list__card_bottom">
               <span className="list__card_bottom-price">$ 5</span>
-              <Counter/>
+              <Counter quantity={20}/>
               <button className="list__cart-button"></button>
             </div>
           </div>
@@ -165,7 +162,7 @@ function Catalog() {
             <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
             <div className="list__card_bottom">
               <span className="list__card_bottom-price">$ 5</span>
-              <Counter/>
+              <Counter quantity={20}/>
               <button className="list__cart-button"></button>
             </div>
           </div>
@@ -176,7 +173,7 @@ function Catalog() {
             <div className="list__card_description">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</div>
             <div className="list__card_bottom">
               <span className="list__card_bottom-price">$ 5</span>
-              <Counter/>
+              <Counter quantity={20}/>
               <button className="list__cart-button"></button>
             </div>
           </div>

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import Nav from './Header/Nav';
-import Order from './Header/Order';
 import Logo from '../images/logo.svg';
 import './Header.css';
+import Actions from "./Header/Actions";
 
 function Header() {
   return (
@@ -10,7 +10,7 @@ function Header() {
       <div className="header__container container">
         <Nav />
         <Link className="header__logo" to='/'><img src={Logo} alt="Balloon Logo"/></Link>
-        <Order />
+        <Actions />
       </div>
     </div>
   );
