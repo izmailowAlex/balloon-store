@@ -18,7 +18,7 @@ function Actions() {
               <svg className="icon__svg"><use href="#bag"></use></svg>
             </span>
             <span className="actions-menu__quantity">10</span>
-            <span className="actions-menu__amount">$ 200</span>
+            <span className="actions-menu__amount">200</span>
           </Link>
         </li>
       </ul>

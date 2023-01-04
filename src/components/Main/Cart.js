@@ -15,15 +15,15 @@ function Cart() {
             <a className="cart__cart-clear" href="#">Очистить корзину</a>
           </div>
           <ul className="cart__list">
-            <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} quantity={1}/></li>
-            <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} quantity={5}/></li>
-            <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} quantity={10}/></li>
-            <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} quantity={20}/></li>
+            <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} count={1}/></li>
+            <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} count={5}/></li>
+            <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} count={10}/></li>
+            <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} count={20}/></li>
           </ul>
         </div>
         <div className="cart__summary">
           <h3 className="cart__summary-title">Итого:</h3>
-          <p className="cart__amount">$ 800</p>
+          <p className="cart__amount">800</p>
           <Input className="cart__promocode" name="promocode" placeholder="Введите промокод" maxlength={8}/>
           <Button className="cart__checkout" button={true}>Оформить заказ</Button>
         </div>
