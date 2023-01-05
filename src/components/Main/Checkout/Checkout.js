@@ -1,6 +1,6 @@
 import './Checkout.css';
-import Input from "../UI/Input/Input";
-import Button from "../UI/Button/Button";
+import Input from "../../UI/Input/Input";
+import Button from "../../UI/Button/Button";
 
 function Checkout() {
   return (

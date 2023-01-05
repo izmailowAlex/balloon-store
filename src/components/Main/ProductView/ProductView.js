@@ -1,6 +1,6 @@
 import './ProductView.css';
-import Counter from "../UI/Counter/Counter";
-import Button from "../UI/Button/Button";
+import Counter from "../../UI/Counter/Counter";
+import Button from "../../UI/Button/Button";
 
 function ProductView() {
   return (

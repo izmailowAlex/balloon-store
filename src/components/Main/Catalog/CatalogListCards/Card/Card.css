@@ -1,0 +1,80 @@
+.card {
+  width: 270px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  width: 270px;
+  min-height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  background-color: var(--white-color);
+  z-index: -10;
+}
+
+.card__image-wrapper {
+  display: flex;
+  margin: auto;
+}
+
+.card__title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 20px 0;
+}
+
+.card__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.card__price {
+  font-family: Nunito, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.card__button {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  background-image: url('../../../../../images/bag-shopping.svg');
+  background-repeat: no-repeat;
+  background-position: 16px 14px;
+  position: relative;
+}
+
+.card__button:before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card__button:hover:before {
+  transform: scale(2.4);
+}

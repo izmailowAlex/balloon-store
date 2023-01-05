@@ -32,8 +32,8 @@
   width: 30px;
 }
 
-.product__price::before {
-  content: "$ ";
+.product__price::after {
+  content: " ₽";
 }
 
 .product__amount {
@@ -43,8 +43,8 @@
   letter-spacing: -1px;
 }
 
-.product__amount::before {
-  content: "$ ";
+.product__amount::after {
+  content: " ₽";
 }
 
 .product__remove {

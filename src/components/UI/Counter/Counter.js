@@ -1,15 +1,57 @@
+import { useState, useRef } from 'react';
 import './Counter.css';
 
-function Counter({quantity}) {
+function Counter({count, min, max}) {
+  let [currentVal, setCurrentVal] = useState(count);
+  const inputRef = useRef(null);
+
+  function increment() {
+    let value = currentVal;
+    value += 1;
+    if (isRange(value)) {
+      setCurrentVal(value);
+    }
+  }
+
+  function decrement() {
+    let value = currentVal;
+    value -= 1;
+    if (isRange(value)) {
+      setCurrentVal(value);
+    }
+  }
+
+  function focusOutEventHandler() {
+    let value = Number(inputRef.current.value);
+    if (isRange(value)) {
+      setCurrentVal(value);
+    }
+  }
+
+  function focusInEventHandler() {
+    inputRef.current.select();
+  }
+
+  function isRange(value) {
+    return value >= min && value <= max;
+  }
+
   return (
     <div className="counter">
-      <button className="counter__button-minus">
+      <button onClick={decrement} className="counter__button-minus">
         <svg className="counter__svg">
           <use href="#minus"></use>
         </svg>
       </button>
-      <input className="counter__value" type="text" value={quantity}/>
-      <button className="counter__button-plus">
+      <input
+        className="counter__value"
+        type="text"
+        ref={inputRef}
+        value={currentVal}
+        onChange={focusOutEventHandler}
+        onFocus={focusInEventHandler}
+      />
+      <button onClick={increment} className="counter__button-plus">
         <svg className="counter__svg">
           <use href="#plus"></use>
         </svg>

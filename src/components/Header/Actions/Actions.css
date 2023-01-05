@@ -62,6 +62,10 @@
           transition: color 0.3s ease-in-out;
 }
 
+.actions-menu__amount::after {
+  content: " ₽";
+}
+
 .icon {
   position: relative;
   display: flex;

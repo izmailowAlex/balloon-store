@@ -67,7 +67,7 @@
   display: inline-block;
 }
 
-.product-view__old-price::after {
+.product-view__old-price::before {
   content: "";
   display: block;
   width: 100%;
@@ -79,9 +79,9 @@
   left: 0;
 }
 
-.product-view__current-price::before,
-.product-view__old-price::before {
-  content: "$ ";
+.product-view__current-price::after,
+.product-view__old-price::after {
+  content: " ₽";
 }
 
 .product-view__control-group {
