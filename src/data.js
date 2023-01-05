@@ -10,7 +10,7 @@ const data = [
     title: "Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.",
     price: "74",
     oldPrice: "79",
-    instock: "в наличии",
+    instock: "нет в наличии",
     discount: "7%",
     status: "лидер",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta recusandae hic velit. Mollitia aspernatur consectetur iure magni amet, cumque ducimus cupiditate quae tenetur accusamus est illo expedita sint reiciendis rerum!"
@@ -40,6 +40,7 @@ const data = [
     alt: "Image_Composition",
     title: "Воздушный шар (12''/30 см) Отмечай Эпично, Белый, пастель, 1 ст, 25 шт.",
     price: "56",
+    oldPrice: "79",
     instock: "нет в наличии",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta recusandae hic velit. Mollitia aspernatur consectetur iure magni amet, cumque ducimus cupiditate quae tenetur accusamus est illo expedita sint reiciendis rerum!"
   },
@@ -70,7 +71,7 @@ const data = [
     title: "Шар (18''/46 см) Круг, С Днем Рождения (мишка с подарком), Градиент, 1 шт. в упак.",
     price: "89",
     oldPrice: "94",
-    instock: "в наличии",
+    instock: "нет в наличии",
     discount: "7%",
     status: "лидер",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta recusandae hic velit. Mollitia aspernatur consectetur iure magni amet, cumque ducimus cupiditate quae tenetur accusamus est illo expedita sint reiciendis rerum!"
@@ -85,6 +86,7 @@ const data = [
     alt: "Image_Birthday",
     title: "Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.",
     price: "78",
+    oldPrice: "101",
     instock: "в наличии",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta recusandae hic velit. Mollitia aspernatur consectetur iure magni amet, cumque ducimus cupiditate quae tenetur accusamus est illo expedita sint reiciendis rerum!"
   },
@@ -98,7 +100,8 @@ const data = [
     alt: "Image_Birthday",
     title: "Шар (18''/46 см) Круг, С Днем Рождения (мишка с подарком), Градиент, 1 шт. в упак.",
     price: "78",
-    instock: "в наличии",
+    oldPrice: "120",
+    instock: "нет в наличии",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta recusandae hic velit. Mollitia aspernatur consectetur iure magni amet, cumque ducimus cupiditate quae tenetur accusamus est illo expedita sint reiciendis rerum!"
   },
   {
@@ -111,6 +114,7 @@ const data = [
     alt: "Image_Anniversary",
     title: "Шар (35''/89 см) Фигура, Динозаврик в колпачке, 1 шт.",
     price: "76",
+    oldPrice: "99",
     instock: "в наличии",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta recusandae hic velit. Mollitia aspernatur consectetur iure magni amet, cumque ducimus cupiditate quae tenetur accusamus est illo expedita sint reiciendis rerum!"
   },
@@ -124,6 +128,7 @@ const data = [
     alt: "Image_Anniversary",
     title: "Шар (27''/69 см) Фигура, Щенок Хаски, 1 шт.",
     price: "76",
+    oldPrice: "85",
     instock: "в наличии",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta recusandae hic velit. Mollitia aspernatur consectetur iure magni amet, cumque ducimus cupiditate quae tenetur accusamus est illo expedita sint reiciendis rerum!"
   },
@@ -136,8 +141,9 @@ const data = [
     id: "10",
     alt: "Image_Anniversary",
     title: "Шар (26''/66 см) Фигура, Лесной Медведь, 1 шт.",
-    price: "76",
-    instock: "в наличии",
+    price: "35",
+    oldPrice: "50",
+    instock: "нет в наличии",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta recusandae hic velit. Mollitia aspernatur consectetur iure magni amet, cumque ducimus cupiditate quae tenetur accusamus est illo expedita sint reiciendis rerum!"
   }
 ];
