@@ -7,6 +7,8 @@ function Dualslider({min, max}) {
   const [maxVal, setMaxVal] = useState(max);
   const minValRef = useRef(null);
   const maxValRef = useRef(null);
+  const minInputRef = useRef(null);
+  const maxInputRef = useRef(null);
   const range = useRef(null);
 
   const getPercent = useCallback((value) => {
@@ -35,6 +37,32 @@ function Dualslider({min, max}) {
       }
     }
   }, [maxVal, getPercent]);
+
+  function minInputOnChangeHandler() {
+    const value = Number(minInputRef.current.value);
+    if (isRange(value)) {
+      setMinVal(value);
+    }
+  }
+
+  function maxInputOnChangeHandler() {
+    const value = Number(maxInputRef.current.value);
+    if (isRange(value)) {
+      setMaxVal(value);
+    }
+  }
+
+  function minInputOnFocusHandler() {
+    minInputRef.current.select()
+  }
+
+  function maxInputOnFocusHandler() {
+    maxInputRef.current.select()
+  }
+
+  function isRange(value) {
+    return value >= min && value <= max
+  }
 
   return (
     <div className="dualslider">
@@ -65,10 +93,26 @@ function Dualslider({min, max}) {
         className="thumb thumb--zindex-4"
       />
       <div className="slider">
-        <div className="slider__track" />
-        <div className="slider__range" ref={range} />
-        <Input className="slider__min-value" value={minVal} />
-        <Input className="slider__max-value" value={maxVal} />
+        <div className="slider__track"></div>
+        <div className="slider__range" ref={range} ></div>
+        <Input
+          className="slider__min-value"
+          ref={minInputRef}
+          value={minVal}
+          label={"от"}
+          onChange={minInputOnChangeHandler}
+          onFocus={minInputOnFocusHandler}
+          maxlength={max.length}
+        />
+        <Input
+          className="slider__max-value"
+          ref={maxInputRef}
+          value={maxVal}
+          label={"до"}
+          onChange={maxInputOnChangeHandler}
+          onFocus={maxInputOnFocusHandler}
+          maxlength={max.length}
+        />
       </div>
     </div>
   );
