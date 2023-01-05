@@ -23,6 +23,11 @@
   box-sizing: border-box;
 }
 
+*::selection {
+  background-color: var(--primary-color);
+  color: var(--base-color);
+}
+
 html {
   font-size: 10px;
   line-height: 1;
