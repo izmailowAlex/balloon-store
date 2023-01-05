@@ -1,8 +1,9 @@
 import { useState, useRef } from 'react';
 import './Counter.css';
 
-function Counter({count, min, max}) {
-  let [currentVal, setCurrentVal] = useState(count);
+function Counter({min, max}) {
+  const [maxCount] = useState(max);
+  let [currentVal, setCurrentVal] = useState(min);
   const inputRef = useRef(null);
 
   function increment() {
@@ -33,7 +34,7 @@ function Counter({count, min, max}) {
   }
 
   function isRange(value) {
-    return value >= min && value <= max;
+    return value >= min && value <= maxCount;
   }
 
   return (
