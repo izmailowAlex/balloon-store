@@ -15,10 +15,26 @@ function Cart() {
             <a className="cart__cart-clear" href="src/components/Main/Cart/Cart#">Очистить корзину</a>
           </div>
           <ul className="cart__list">
-            <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} count={1}/></li>
-            <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} count={5}/></li>
-            <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} count={10}/></li>
-            <li className="cart__item"><Product name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт." image="../../images/cat.png" price={5} count={20}/></li>
+            <li className="cart__item">
+              <Product
+                name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт."
+                image="../../images/cat.png"
+                price={5}
+                count={1}
+                min={1}
+                max={100}
+              />
+            </li>
+            <li className="cart__item">
+              <Product
+                name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт."
+                image="../../images/cat.png"
+                price={5}
+                count={1}
+                min={1}
+                max={100}
+              />
+            </li>
           </ul>
         </div>
         <div className="cart__summary">
