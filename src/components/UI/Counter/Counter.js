@@ -1,31 +1,57 @@
-import { useRef } from 'react';
-
+import { useState, useRef } from 'react';
 import './Counter.css';
 
-function Counter({count}) {
+function Counter({count, min, max}) {
+  let [currentVal, setCurrentVal] = useState(count);
+  const inputRef = useRef(null);
 
-  const inputRef = useRef();
+  function increment() {
+    let value = currentVal;
+    value += 1;
+    if (isRange(value)) {
+      setCurrentVal(value);
+    }
+  }
 
-  function changeCountValue(operation) {
-    if (operation === 'plus') count++;
-    else count--;
-    const inputElem = inputRef.current;
-    inputElem.value = count;
+  function decrement() {
+    let value = currentVal;
+    value -= 1;
+    if (isRange(value)) {
+      setCurrentVal(value);
+    }
+  }
+
+  function focusOutEventHandler() {
+    let value = Number(inputRef.current.value);
+    if (isRange(value)) {
+      setCurrentVal(value);
+    }
+  }
+
+  function focusInEventHandler() {
+    inputRef.current.select();
+  }
+
+  function isRange(value) {
+    return value >= min && value <= max;
   }
 
   return (
     <div className="counter">
-      <button onClick={() => {
-        changeCountValue('minus');
-      }} className="counter__button-minus">
+      <button onClick={decrement} className="counter__button-minus">
         <svg className="counter__svg">
           <use href="#minus"></use>
         </svg>
       </button>
-      <input ref={inputRef} className="counter__value" type="text" value={count}/>
-      <button onClick={() => {
-        changeCountValue('plus');
-      }} className="counter__button-plus">
+      <input
+        className="counter__value"
+        type="text"
+        ref={inputRef}
+        value={currentVal}
+        onChange={focusOutEventHandler}
+        onFocus={focusInEventHandler}
+      />
+      <button onClick={increment} className="counter__button-plus">
         <svg className="counter__svg">
           <use href="#plus"></use>
         </svg>
