@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import './Counter.css';
 
 function Counter({count, min, max}) {
-  let [currentVal, setCurrentVal] = useState(count);
+  let [currentVal, setCurrentVal] = useState(Number(count));
   const inputRef = useRef(null);
 
   function increment() {
