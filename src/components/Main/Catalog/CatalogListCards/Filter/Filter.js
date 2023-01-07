@@ -4,7 +4,7 @@ import Checkbox from '../../../../UI/Checkbox/Checkbox';
 import Dualslider from "../../../../UI/Dualslider/Dualslider";
 import './Filter.css';
 
-function Filter() {
+function Filter({onChangeHandler}) {
   const {productsLibrary, setProductsLibrary} = useContext(AppContext);
   const [currentindex, setCurrentIndex] = useState(0);
   const [allCategories, setAllCategories] = useState([]);
@@ -63,7 +63,7 @@ function Filter() {
           {allCategories.map((item, index) => {
             return (
             <li key={index} className="list__item" >
-              <Checkbox>{item}</Checkbox>
+              <Checkbox onChange={(event) => onChangeHandler(event, item, "category")}>{item}</Checkbox>
             </li>)
           })}
         </ul>
@@ -77,7 +77,7 @@ function Filter() {
           {allTypes.map((item, index) => {
             return (
             <li key={index} className="list__item" >
-              <Checkbox>{item}</Checkbox>
+              <Checkbox onChange={(event) => onChangeHandler(event, item, "type")}>{item}</Checkbox>
             </li>)
           })}
         </ul>
@@ -91,7 +91,7 @@ function Filter() {
           {allColors.map((item, index) => {
             return (
             <li key={index} className="list__item" >
-              <Checkbox className={`checkbox_colors checkbox_${item}`}></Checkbox>
+              <Checkbox className={`checkbox_colors checkbox_${item}`} onChange={(event) => onChangeHandler(event, item, "color")}></Checkbox>
             </li>)
           })}
         </ul>

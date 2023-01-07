@@ -5,7 +5,7 @@ import './Card.css';
 function Card({product}) {
 
   return (
-    <div className="card" data-id={product.id}>
+    <div className="card">
       <div className="card__image-wrapper">
         <img className="card__image" src={product.src} alt=""/>
       </div>
