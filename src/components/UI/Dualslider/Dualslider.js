@@ -85,6 +85,7 @@ function Dualslider({min, max}) {
         className="thumb thumb--zindex-3"
       />
       <input
+        className="dualslider__thumb dualslider__thumb_right"
         type="range"
         min={min}
         max={max}
@@ -97,11 +98,11 @@ function Dualslider({min, max}) {
         }}
         className="thumb thumb--zindex-4"
       />
-      <div className="slider">
-        <div className="slider__track"></div>
-        <div className="slider__range" ref={range} ></div>
+      <div className="dualslider__wrapper">
+        <div className="dualslider__track"></div>
+        <div className="dualslider__range" ref={range} ></div>
         <Input
-          className="slider__min-value"
+          className="dualslider__min-value"
           ref={minInputRef}
           value={minVal}
           label={"от"}
@@ -110,7 +111,7 @@ function Dualslider({min, max}) {
           maxlength={max.length}
         />
         <Input
-          className="slider__max-value"
+          className="dualslider__max-value"
           ref={maxInputRef}
           value={maxVal}
           label={"до"}
