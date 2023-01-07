@@ -67,6 +67,11 @@ function Dualslider({min, max}) {
   return (
     <div className="dualslider">
       <input
+        className={
+          minVal > max - 100
+            ? "dualslider__thumb dualslider__thumb_upper"
+            : "dualslider__thumb dualslider__thumb_left"
+          }
         type="range"
         min={min}
         max={max}
