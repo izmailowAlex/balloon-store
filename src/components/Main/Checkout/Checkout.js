@@ -2,7 +2,7 @@ import './Checkout.css';
 import Input from "../../UI/Input/Input";
 import Button from "../../UI/Button/Button";
 
-function Checkout() {
+function Checkout({setPopupWindow}) {
   return (
     <div className="checkout">
       <div className="checkout__form">
@@ -20,7 +20,7 @@ function Checkout() {
             </div>
           </div>
         </div>
-        <button className="checkout__button-close"></button>
+        <button className="checkout__button-close" onClick={() => {setPopupWindow(false)}}></button>
         <Button className="checkout__button-confirm" button={true}>Подтвердить</Button>
       </div>
     </div>
