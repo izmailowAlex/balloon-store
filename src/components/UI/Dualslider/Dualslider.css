@@ -3,72 +3,72 @@
   height: 70px;
   padding: 10px 0 0 0;
 }
-.slider {
+.dualslider__wrapper {
   position: relative;
   width: 100%;
 }
 
-.slider__track,
-.slider__range,
-.slider__min-value,
-.slider__max-value {
+.dualslider__track,
+.dualslider__range,
+.dualslider__min-value,
+.dualslider__max-value {
   position: absolute;
 }
 
-.slider__track,
-.slider__range {
+.dualslider__track,
+.dualslider__range {
   border-radius: 2px;
   height: 4px;
 }
 
-.slider__track {
+.dualslider__track {
   background-color: var(--grey-color);
   width: 100%;
   z-index: 1;
 }
 
-.slider__range {
+.dualslider__range {
   background-color: var(--secondary-color);
   z-index: 2;
 }
 
-.slider__min-value,
-.slider__max-value {
+.dualslider__min-value,
+.dualslider__max-value {
   color: var(--grey-color);
   font-size: 12px;
   margin-top: 20px;
 }
 
-.slider__min-value {
+.dualslider__min-value {
   width: 100px;
   left: 0;
 }
 
-.slider__min-value .input__textbox,
-.slider__max-value .input__textbox{
+.dualslider__min-value .input__textbox,
+.dualslider__max-value .input__textbox{
   padding: 10px 10px 10px 20px;
 }
 
-.slider__min-value input::before {
+.dualslider__min-value input::before {
   content: "от";
 }
 
-.slider__max-value {
+.dualslider__max-value {
   width: 100px;
   right: 0;
 }
 
-.slider__max-value input::before {
+.dualslider__max-value input::before {
   content: "до";
 }
 
-.thumb,
-.thumb::-webkit-slider-thumb {
+.dualslider__thumb,
+.dualslider__thumb::-webkit-slider-thumb {
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-.thumb {
+.dualslider__thumb {
   pointer-events: none;
   position: absolute;
   height: 0;
@@ -76,19 +76,19 @@
   outline: none;
 }
 
-.thumb--zindex-3 {
+.dualslider__thumb_left {
   z-index: 3;
 }
 
-.thumb--zindex-4 {
+.dualslider__thumb_right {
   z-index: 4;
 }
 
-.thumb--zindex-5 {
+.dualslider__thumb_upper {
   z-index: 5;
 }
 
-.thumb::-webkit-slider-thumb {
+.dualslider__thumb::-webkit-slider-thumb {
   background-color: var(--secondary-color);
   border: none;
   border-radius: 50%;
@@ -102,11 +102,11 @@
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.thumb:hover::-webkit-slider-thumb {
+.dualslider__thumb:hover::-webkit-slider-thumb {
   box-shadow: 0 0 0 5px rgba(253, 120, 152, 0.2);
 }
 
-.thumb::-moz-range-thumb {
+.dualslider__thumb::-moz-range-thumb {
   background-color: var(--secondary-color);
   border: none;
   border-radius: 50%;
@@ -119,6 +119,6 @@
   position: relative;
 }
 
-.thumb:hover::-moz-range-thumb {
+.dualslider__thumb:hover::-moz-range-thumb {
   box-shadow: 0 0 0 5px rgba(253, 120, 152, 0.2);
 }
