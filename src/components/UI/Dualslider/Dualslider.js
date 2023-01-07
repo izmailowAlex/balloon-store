@@ -38,26 +38,36 @@ function Dualslider({min, max}) {
     }
   }, [maxVal, getPercent]);
 
-  function minInputOnChangeHandler() {
-    const value = Number(minInputRef.current.value);
-    if (isRange(value)) {
+  useEffect(() => {
+    minInputRef.current.value = minVal;
+    maxInputRef.current.value = maxVal;
+  }, [])
+
+  function minInputOnBlurHandler() {
+    const value = minInputRef.current.value;
+    if (!isEmpty(value) && isNumber(value) && isRange(value) && value < maxVal) {
       setMinVal(value);
+    } else {
+      minInputRef.current.value = minVal;
     }
   }
 
-  function maxInputOnChangeHandler() {
-    const value = Number(maxInputRef.current.value);
-    if (isRange(value)) {
+  function maxInputOnBlurHandler() {
+    const value = maxInputRef.current.value;
+    if (!isEmpty(value) && isNumber(value) && isRange(value) && value > minVal) {
       setMaxVal(value);
+    } else {
+      maxInputRef.current.value = maxVal;
     }
   }
 
-  function minInputOnFocusHandler() {
-    minInputRef.current.select()
+  function isNumber(value) {
+    return !Number.isNaN(Number(value))
   }
 
-  function maxInputOnFocusHandler() {
-    maxInputRef.current.select()
+  function isEmpty(value) {
+    value = String(value);
+    return value.trim() === ''
   }
 
   function isRange(value) {
@@ -81,8 +91,8 @@ function Dualslider({min, max}) {
           const value = Math.min(+event.target.value, maxVal - 1);
           setMinVal(value);
           event.target.value = value.toString();
+          minInputRef.current.value = value.toString();
         }}
-        className="thumb thumb--zindex-3"
       />
       <input
         className="dualslider__thumb dualslider__thumb_right"
@@ -95,8 +105,8 @@ function Dualslider({min, max}) {
           const value = Math.max(+event.target.value, minVal + 1);
           setMaxVal(value);
           event.target.value = value.toString();
+          maxInputRef.current.value = value.toString();
         }}
-        className="thumb thumb--zindex-4"
       />
       <div className="dualslider__wrapper">
         <div className="dualslider__track"></div>
@@ -104,20 +114,29 @@ function Dualslider({min, max}) {
         <Input
           className="dualslider__min-value"
           ref={minInputRef}
-          value={minVal}
           label={"от"}
-          onChange={minInputOnChangeHandler}
-          onFocus={minInputOnFocusHandler}
-          maxlength={max.length}
+          maxlength={String(max).length}
+          onFocus={(event) => event.target.select()}
+          onBlur={minInputOnBlurHandler}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              event.target.blur();
+              maxInputRef.current.select();
+            }
+          }}
         />
         <Input
           className="dualslider__max-value"
           ref={maxInputRef}
-          value={maxVal}
           label={"до"}
-          onChange={maxInputOnChangeHandler}
-          onFocus={maxInputOnFocusHandler}
-          maxlength={max.length}
+          maxlength={String(max).length}
+          onFocus={(event) => event.target.select()}
+          onBlur={maxInputOnBlurHandler}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              event.target.blur();
+            }
+          }}
         />
       </div>
     </div>
