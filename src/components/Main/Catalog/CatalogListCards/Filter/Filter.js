@@ -45,7 +45,6 @@ function Filter() {
     }
   }, [currentindex, setCurrentIndex]);
 
-  /* Версия с onChangeHandler */
   const { productsLibrary } = useContext(AppContext);
   const { setFilteredList } = useContext(CatalogContext);
   const [filters, setFilters] = useState({});
