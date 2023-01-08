@@ -1,26 +1,34 @@
+import { useParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { AppContext } from '../../../App';
 import './ProductView.css';
 import Counter from "../../UI/Counter/Counter";
 import Button from "../../UI/Button/Button";
 
 function ProductView() {
+  const productID = useParams();
+
+  const {productsLibrary, setProductsLibrary} = useContext(AppContext);
+  const currentProduct = productsLibrary.find((item) => item.id === productID.number);
+
   return (
     <div className="product-view">
       <div className="product-view__image-container">
         <img className="product-view__image" src="../../images/cat-full.png" alt="Cat"/>
       </div>
       <div className="product-view__content">
-        <h2 className="product-view__title">Шар (22''/56 см) Фигура, Крутой Кот, 1 шт.</h2>
-        <span className="product-view__tag product-view__tag_instock">В наличии</span>
+        <h2 className="product-view__title">{currentProduct.title}</h2>
+        <span className="product-view__tag product-view__tag_instock">{currentProduct.instock}</span>
         <div className="product-view__price">
-          <span className="product-view__current-price">99</span>
-          <span className="product-view__old-price">199</span>
+          <span className="product-view__current-price">{currentProduct.price}</span>
+          <span className="product-view__old-price">{currentProduct.oldPrice}</span>
         </div>
         <div className="product-view__control-group">
-          <span className="product-view__quantity"><Counter quantity={5}/></span>
+          <span className="product-view__quantity"><Counter count={currentProduct.count} min={1} max={100}/></span>
           <Button className="product-view__to-cart-button" button={true}>В корзину</Button>
         </div>
         <div className="product-view__description">
-          <div className="product-view__description-title">Характеристики</div>
+          <div className="product-view__description-title">{currentProduct.text}</div>
           <ul className="product-view__description-list">
             <li className="product-view__description-item">
               <span className="product-view__property">Производитель:</span>

@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom';
 import './Checkbox.css';
 
 function Checkbox({children, className, onChange}) {

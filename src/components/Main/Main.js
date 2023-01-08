@@ -15,7 +15,7 @@ function Main() {
           <Route path='/' element={<Home />} />
           <Route path='/catalog/' element={<Catalog />} />
           <Route path='/cart/' element={<Cart />} />
-          <Route path='/productview/' element={<ProductView />} />
+          <Route path='/productview/:number' element={<ProductView />} />
           <Route path='/checkout/' element={<Checkout />} />
           <Route path='/page404/' element={<Page404 />} />
         </Routes>
