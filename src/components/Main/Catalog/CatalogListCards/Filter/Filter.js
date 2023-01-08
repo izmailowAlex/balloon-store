@@ -3,9 +3,9 @@ import { AppContext } from '../../../../../App';
 import Checkbox from '../../../../UI/Checkbox/Checkbox';
 import Dualslider from "../../../../UI/Dualslider/Dualslider";
 import './Filter.css';
+import {CatalogContext} from "../../Catalog";
 
-function Filter({onChangeHandler}) {
-  const {productsLibrary, setProductsLibrary} = useContext(AppContext);
+function Filter() {
   const [currentindex, setCurrentIndex] = useState(0);
   const [allCategories, setAllCategories] = useState([]);
   const [allTypes, setAllTypes] = useState([]);
@@ -44,6 +44,44 @@ function Filter({onChangeHandler}) {
       setAllColors(colorsTmp);
     }
   }, [currentindex, setCurrentIndex]);
+
+  /* Версия с onChangeHandler */
+  const { productsLibrary } = useContext(AppContext);
+  const { setFilteredList } = useContext(CatalogContext);
+  const [filters, setFilters] = useState({});
+
+  function onChangeHandler(event, item, category) {
+    const tempFilters ={...filters};
+    if (event.target.checked === true) {
+      if (tempFilters[category]) {
+        tempFilters[category].push(item);
+      } else {
+        tempFilters[category] = [item];
+      }
+    } else {
+      tempFilters[category] = tempFilters[category].filter(element => element !== item);
+      if (tempFilters[category].length === 0) {
+        delete tempFilters[category];
+      }
+    }
+    setFilters({...tempFilters});
+  }
+
+  function applyFilter() {
+    const tempFilteredList = productsLibrary.filter((item, index) => {
+      for (let key in filters) {
+        if (!filters[key].includes(item[key])) {
+          return false;
+        }
+      }
+      return true;
+    });
+    setFilteredList([...tempFilteredList]);
+  }
+
+  useEffect(() => {
+    applyFilter();
+  }, [filters]);
 
   return (
     <div className="main__catalog-filter filter">

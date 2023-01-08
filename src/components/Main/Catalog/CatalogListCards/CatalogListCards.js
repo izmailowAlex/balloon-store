@@ -3,13 +3,12 @@ import { CatalogContext } from "../Catalog";
 import Card from "./Card/Card";
 
 function CatalogListCards() {
-  const { currentList } = useContext(CatalogContext);
-  console.log(currentList);
+  const { filteredList } = useContext(CatalogContext);
 
   return(
     <div className="catalog-list">
     {
-      currentList.map((product, index) => {
+      filteredList.map((product, index) => {
         return (
           <Card key={index} product={product}/>
         )

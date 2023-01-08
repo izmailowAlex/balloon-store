@@ -1,11 +1,17 @@
 import './Input.css';
 
-function Input({className, name, value, placeholder, message, maxlength}) {
+function Input({className, name, placeholder, message, maxlength}) {
   const classname = className ? 'input ' + className : 'input';
 
   return (
     <div className={classname}>
-      <input className="input__textbox" type="text" name={name} value={value} placeholder={placeholder} autoComplete="off" maxLength={maxlength}/>
+      <input
+      className="input__textbox"
+      type="text"
+      name={name}
+      placeholder={placeholder}
+      autoComplete="off"
+      maxLength={maxlength}/>
       {message
       ? <span className="input__message">{message}</span>
       : ""}

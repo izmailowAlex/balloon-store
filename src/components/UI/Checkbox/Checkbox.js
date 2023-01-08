@@ -1,12 +1,7 @@
-import { useContext } from 'react';
-import { CatalogContext } from '../../Main/Catalog/Catalog';
 import { useSearchParams } from 'react-router-dom';
 import './Checkbox.css';
 
-function Checkbox({children, className}) {
-
-  const { onChangeHandler } = useContext(CatalogContext);
-
+function Checkbox({children, className, onChange}) {
   const classname = className ? "checkbox " + className : "checkbox";
   const [searchParams, setSearchParams] = useSearchParams()
 
@@ -19,7 +14,7 @@ function Checkbox({children, className}) {
       <input
         className="checkbox__input"
         type="checkbox"
-        onChange={() => onChangeHandler()}
+        onChange={onChange}
       />
       <span className="checkbox__wrapper">
         <span className="checkbox__icon">
