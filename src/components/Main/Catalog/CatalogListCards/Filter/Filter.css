@@ -21,7 +21,7 @@
   background-image: url('../../../../../images/chevron-down.svg');
   width: 16px;
   height: 16px;
-  display: inline-block;
+  display: none;
 }
 
 .active {
