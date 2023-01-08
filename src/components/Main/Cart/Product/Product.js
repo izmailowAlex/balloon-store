@@ -3,6 +3,7 @@ import Checkbox from "../../../UI/Checkbox/Checkbox";
 import Counter from "../../../UI/Counter/Counter";
 
 function Product({image, name, price, count, min, max}) {
+
   return (
     <div className="product">
       <span className="product__checkbox"><Checkbox /></span>
@@ -15,8 +16,8 @@ function Product({image, name, price, count, min, max}) {
         <span className="icon">
           <svg className="icon__svg"><use href="#cross"></use></svg>
         </span>
-      </button><
-    /div>
+      </button>
+    </div>
   );
 }
 
