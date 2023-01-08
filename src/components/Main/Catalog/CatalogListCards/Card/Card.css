@@ -27,10 +27,20 @@
 }
 
 .card__title {
+  margin: 20px 0;
+}
+
+.card__title-link {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
-  margin: 20px 0;
+  text-decoration: none;
+  color: var(--base-color);
+  transition: color 0.3s ease-in-out;
+}
+
+.card__title-link:hover {
+  color: var(--secondary-color);
 }
 
 .card__controls {

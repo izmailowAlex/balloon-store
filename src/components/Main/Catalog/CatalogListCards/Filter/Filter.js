@@ -45,7 +45,6 @@ function Filter() {
     }
   }, [currentindex, setCurrentIndex]);
 
-  /* Версия с onChangeHandler */
   const { productsLibrary } = useContext(AppContext);
   const { setFilteredList } = useContext(CatalogContext);
   const [filters, setFilters] = useState({});
@@ -68,7 +67,7 @@ function Filter() {
   }
 
   function applyFilter() {
-    const tempFilteredList = productsLibrary.filter((item, index) => {
+    const tempFilteredList = productsLibrary.filter((item) => {
       for (let key in filters) {
         if (!filters[key].includes(item[key])) {
           return false;
