@@ -2,12 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import './Checkbox.css';
 
 function Checkbox({children, className, onChange}) {
-  const classname = className ? "checkbox " + className : "checkbox";
-  const [searchParams, setSearchParams] = useSearchParams()
-
-  function clickCheckbox(children) {
-    setSearchParams({category: children})
-  }
+  const classname = className ? "checkbox " + className : "checkbox"
 
   return (
     <label className={classname}>

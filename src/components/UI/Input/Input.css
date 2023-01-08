@@ -43,3 +43,17 @@
 .input_error .input__message {
   color: var(--error-color);
 }
+
+.input_labeled .input__textbox {
+  padding: 10px 10px 10px 30px;
+}
+
+.input_labeled .input__label {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--grey-color);
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
