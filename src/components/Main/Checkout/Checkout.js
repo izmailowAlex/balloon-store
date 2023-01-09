@@ -1,9 +1,9 @@
-import './Checkout.css';
-import Input from "../../UI/Input/Input";
-import Button from "../../UI/Button/Button";
-import { useState } from "react";
+import './Checkout.css'
+import Input from '../../UI/Input/Input'
+import Button from '../../UI/Button/Button'
+import { useState } from 'react'
 
-function Checkout({setPopupWindow}) {
+function Checkout ({ setPopupWindow }) {
   const [errorName, setErrorName] = useState(false)
   const [errorPhone, setErrorPhone] = useState(false)
   const [errorAddress, setErrorAddress] = useState(false)
@@ -14,7 +14,7 @@ function Checkout({setPopupWindow}) {
   const [errorCardCVC, setErrorCardCVC] = useState(false)
 
   function confirmOrderHandler() {
-    console.log('Confirm Order');
+    console.log('Confirm Order')
   }
 
   function checkNameHandler(value) {
@@ -27,7 +27,8 @@ function Checkout({setPopupWindow}) {
   }
 
   function checkPhoneHandler(value) {
-    const reg = /^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}(([\- ]?\d{1})?[\- ]?\d{1})?$/
+    const reg =
+      /^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}(([\- ]?\d{1})?[\- ]?\d{1})?$/
     if (String(value).match(reg)) {
       setErrorPhone(false)
     } else {
@@ -171,15 +172,22 @@ function Checkout({setPopupWindow}) {
             </div>
           </div>
         </div>
-        <button className="checkout__button-close" onClick={() => {setPopupWindow(false)}}></button>
+        <button
+          className="checkout__button-close"
+          onClick={() => {
+            setPopupWindow(false)
+          }}
+        ></button>
         <Button
           className="checkout__button-confirm"
           button={true}
           onClick={() => confirmOrderHandler()}
-        >Подтвердить</Button>
+        >
+          Подтвердить
+        </Button>
       </div>
     </div>
-  );
+  )
 }
 
-export default Checkout;
+export default Checkout

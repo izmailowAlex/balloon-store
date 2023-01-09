@@ -1,86 +1,88 @@
-import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../../../../../App';
-import Checkbox from '../../../../UI/Checkbox/Checkbox';
-import Dualslider from "../../../../UI/Dualslider/Dualslider";
-import './Filter.css';
-import {CatalogContext} from "../../Catalog";
+import { useContext, useEffect, useState } from 'react'
+import { AppContext } from '../../../../../App'
+import Checkbox from '../../../../UI/Checkbox/Checkbox.tsx'
+import Dualslider from '../../../../UI/Dualslider/Dualslider'
+import './Filter.css'
+import { CatalogContext } from '../../Catalog'
 
-function Filter() {
-  const [currentindex, setCurrentIndex] = useState(0);
-  const [allCategories, setAllCategories] = useState([]);
-  const [allTypes, setAllTypes] = useState([]);
-  const [allColors, setAllColors] = useState([]);
+function Filter () {
+  const [currentindex, setCurrentIndex] = useState(0)
+  const [allCategories, setAllCategories] = useState([])
+  const [allTypes, setAllTypes] = useState([])
+  const [allColors, setAllColors] = useState([])
 
   useEffect(() => {
     if (productsLibrary && productsLibrary.length > 0) {
-      let typesTmp = [];
+      let typesTmp = []
       productsLibrary.forEach((item) => {
-        typesTmp.push(item.type);
+        typesTmp.push(item.type)
       })
       typesTmp = typesTmp.filter((item, index, array) => {
-        setCurrentIndex(index+1)
+        setCurrentIndex(index + 1)
         return array.indexOf(item) === index
       })
-      setAllTypes(typesTmp);
+      setAllTypes(typesTmp)
 
-      let categoriesTmp = [];
+      let categoriesTmp = []
       productsLibrary.forEach((item) => {
-        categoriesTmp.push(item.category);
+        categoriesTmp.push(item.category)
       })
       categoriesTmp = categoriesTmp.filter((item, index, array) => {
-        setCurrentIndex(index+1)
+        setCurrentIndex(index + 1)
         return array.indexOf(item) === index
       })
-      setAllCategories(categoriesTmp);
+      setAllCategories(categoriesTmp)
 
-      let colorsTmp = [];
+      let colorsTmp = []
       productsLibrary.forEach((item) => {
-        colorsTmp.push(item.color);
+        colorsTmp.push(item.color)
       })
       colorsTmp = colorsTmp.filter((item, index, array) => {
-        setCurrentIndex(index+1)
+        setCurrentIndex(index + 1)
         return array.indexOf(item) === index
       })
-      setAllColors(colorsTmp);
+      setAllColors(colorsTmp)
     }
-  }, [currentindex, setCurrentIndex]);
+  }, [currentindex, setCurrentIndex])
 
-  const { productsLibrary } = useContext(AppContext);
-  const { setFilteredList } = useContext(CatalogContext);
-  const [filters, setFilters] = useState({});
+  const { productsLibrary } = useContext(AppContext)
+  const { setFilteredList } = useContext(CatalogContext)
+  const [filters, setFilters] = useState({})
 
   function onChangeHandler(event, item, category) {
-    const tempFilters ={...filters};
+    const tempFilters = { ...filters }
     if (event.target.checked === true) {
       if (tempFilters[category]) {
-        tempFilters[category].push(item);
+        tempFilters[category].push(item)
       } else {
-        tempFilters[category] = [item];
+        tempFilters[category] = [item]
       }
     } else {
-      tempFilters[category] = tempFilters[category].filter(element => element !== item);
+      tempFilters[category] = tempFilters[category].filter(
+        (element) => element !== item
+      )
       if (tempFilters[category].length === 0) {
-        delete tempFilters[category];
+        delete tempFilters[category]
       }
     }
-    setFilters({...tempFilters});
+    setFilters({ ...tempFilters })
   }
 
   function applyFilter() {
     const tempFilteredList = productsLibrary.filter((item) => {
       for (let key in filters) {
         if (!filters[key].includes(item[key])) {
-          return false;
+          return false
         }
       }
-      return true;
-    });
-    setFilteredList([...tempFilteredList]);
+      return true
+    })
+    setFilteredList([...tempFilteredList])
   }
 
   useEffect(() => {
-    applyFilter();
-  }, [filters]);
+    applyFilter()
+  }, [filters])
 
   return (
     <div className="main__catalog-filter filter">
@@ -99,9 +101,14 @@ function Filter() {
         <ul className="filter__block_list">
           {allCategories.map((item, index) => {
             return (
-            <li key={index} className="list__item" >
-              <Checkbox onChange={(event) => onChangeHandler(event, item, "category")}>{item}</Checkbox>
-            </li>)
+              <li key={index} className="list__item">
+                <Checkbox
+                  onChange={(event) => onChangeHandler(event, item, 'category')}
+                >
+                  {item}
+                </Checkbox>
+              </li>
+            )
           })}
         </ul>
       </div>
@@ -113,9 +120,14 @@ function Filter() {
         <ul className="filter__block_list">
           {allTypes.map((item, index) => {
             return (
-            <li key={index} className="list__item" >
-              <Checkbox onChange={(event) => onChangeHandler(event, item, "type")}>{item}</Checkbox>
-            </li>)
+              <li key={index} className="list__item">
+                <Checkbox
+                  onChange={(event) => onChangeHandler(event, item, 'type')}
+                >
+                  {item}
+                </Checkbox>
+              </li>
+            )
           })}
         </ul>
       </div>
@@ -127,14 +139,18 @@ function Filter() {
         <ul className="filter__block_list-colors">
           {allColors.map((item, index) => {
             return (
-            <li key={index} className="list__item" >
-              <Checkbox className={`checkbox_colors checkbox_${item}`} onChange={(event) => onChangeHandler(event, item, "color")}></Checkbox>
-            </li>)
+              <li key={index} className="list__item">
+                <Checkbox
+                  className={`checkbox_colors checkbox_${item}`}
+                  onChange={(event) => onChangeHandler(event, item, 'color')}
+                ></Checkbox>
+              </li>
+            )
           })}
         </ul>
       </div>
     </div>
-  );
+  )
 }
 
-export default Filter;
+export default Filter

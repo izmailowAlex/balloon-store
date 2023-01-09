@@ -1,21 +1,17 @@
-import { useContext } from "react";
-import { CatalogContext } from "../Catalog";
-import Card from "./Card/Card";
+import { useContext } from 'react'
+import { CatalogContext } from '../Catalog'
+import Card from './Card/Card'
 
-function CatalogListCards() {
-  const { filteredList } = useContext(CatalogContext);
+function CatalogListCards () {
+  const { filteredList } = useContext(CatalogContext)
 
-  return(
+  return (
     <div className="catalog-list">
-    {
-      filteredList.map((product, index) => {
-        return (
-          <Card key={index} product={product}/>
-        )
-      })
-    }
+      {filteredList.map((product, index) => {
+        return <Card key={index} product={product} />
+      })}
     </div>
   )
 }
 
-export default CatalogListCards;
+export default CatalogListCards

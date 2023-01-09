@@ -1,39 +1,39 @@
-import { useState, useRef } from 'react';
-import './Counter.css';
+import { useState, useRef } from 'react'
+import './Counter.css'
 
-function Counter({count, min, max}) {
-  let [currentVal, setCurrentVal] = useState(Number(count));
-  const inputRef = useRef(null);
+function Counter ({ count, min, max }) {
+  let [currentVal, setCurrentVal] = useState(Number(count))
+  const inputRef = useRef(null)
 
-  function increment() {
-    let value = currentVal;
-    value += 1;
-    if (isRange(value)) {
-      setCurrentVal(value);
+  function increment () {
+    let value = currentVal
+    value += 1
+    if (isRange (value)) {
+      setCurrentVal(value)
     }
   }
 
-  function decrement() {
-    let value = currentVal;
-    value -= 1;
+  function decrement () {
+    let value = currentVal
+    value -= 1
     if (isRange(value)) {
-      setCurrentVal(value);
+      setCurrentVal(value)
     }
   }
 
-  function focusOutEventHandler() {
-    let value = Number(inputRef.current.value);
+  function focusOutEventHandler () {
+    let value = Number(inputRef.current.value)
     if (isRange(value)) {
-      setCurrentVal(value);
+      setCurrentVal(value)
     }
   }
 
-  function focusInEventHandler() {
-    inputRef.current.select();
+  function focusInEventHandler () {
+    inputRef.current.select()
   }
 
-  function isRange(value) {
-    return value >= min && value <= max;
+  function isRange (value) {
+    return value >= min && value <= max
   }
 
   return (
@@ -57,7 +57,7 @@ function Counter({count, min, max}) {
         </svg>
       </button>
     </div>
-  );
+  )
 }
 
-export default Counter;
+export default Counter

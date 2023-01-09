@@ -33,7 +33,7 @@
 }
 
 .product__price::after {
-  content: " ₽";
+  content: ' ₽';
 }
 
 .product__amount {
@@ -44,7 +44,7 @@
 }
 
 .product__amount::after {
-  content: " ₽";
+  content: ' ₽';
 }
 
 .product__remove {
@@ -61,21 +61,20 @@
   justify-content: center;
   padding: 0;
   margin: 0;
-  transition: color 0.3s ease-in-out,
-              box-shadow 0.3s linear,
-              background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s linear,
+    background-color 0.3s ease-in-out;
   box-shadow: 0 0 0 0 transparent;
 }
 
 .product__remove:focus {
   outline: none;
-  background-color: #FFECEC;
-  box-shadow: 0 0 0 5px #FFECEC;
+  background-color: #ffecec;
+  box-shadow: 0 0 0 5px #ffecec;
 }
 
 .product__remove:hover {
   background-color: var(--error-color);
-  box-shadow: 0 0 0 5px #FFECEC;
+  box-shadow: 0 0 0 5px #ffecec;
 }
 
 .product__remove .icon {

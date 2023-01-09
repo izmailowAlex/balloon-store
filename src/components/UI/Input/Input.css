@@ -9,8 +9,7 @@
   border: 1px solid var(--grey-color);
   background-color: var(--white-color);
   padding: 10px;
-  transition: box-shadow 0.3s ease-in-out,
-              color 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
   box-shadow: 0 0 0 0 transparent;
 }
 

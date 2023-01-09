@@ -36,7 +36,7 @@
 
 .counter__button-minus,
 .counter__button-plus {
-  color: #B4B4B4;
+  color: #b4b4b4;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -47,9 +47,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.3s ease-in-out,
-  box-shadow 0.3s linear,
-  background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s linear,
+    background-color 0.3s ease-in-out;
   box-shadow: 0 0 0 0 transparent;
 }
 
@@ -57,15 +56,15 @@
 .counter__button-plus:focus {
   outline: none;
   color: #323031;
-  background-color: #FFFCE0;
-  box-shadow: 0 0 0 5px #FFFCE0;
+  background-color: #fffce0;
+  box-shadow: 0 0 0 5px #fffce0;
 }
 
 .counter__button-minus:hover,
 .counter__button-plus:hover {
   color: #323031;
-  background-color: #FFF068;
-  box-shadow: 0 0 0 5px #FFFCE0;
+  background-color: #fff068;
+  box-shadow: 0 0 0 5px #fffce0;
 }
 
 .counter__svg {
@@ -74,6 +73,6 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   opacity: 1;
 }

@@ -45,12 +45,12 @@
 }
 
 .dualslider__min-value .input__textbox,
-.dualslider__max-value .input__textbox{
+.dualslider__max-value .input__textbox {
   padding: 10px 10px 10px 20px;
 }
 
 .dualslider__min-value input::before {
-  content: "от";
+  content: 'от';
 }
 
 .dualslider__max-value {
@@ -59,7 +59,7 @@
 }
 
 .dualslider__max-value input::before {
-  content: "до";
+  content: 'до';
 }
 
 .dualslider__thumb,
