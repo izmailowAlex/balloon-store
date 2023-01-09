@@ -10,7 +10,19 @@
 }
 
 .product-view__image-container {
+  width: 550px;
   position: relative;
+}
+
+.product-view__image {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.product-view__content {
+  width: 550px;
 }
 
 .product-view__title {
