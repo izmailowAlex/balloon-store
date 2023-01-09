@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.979bbd62.css",
+    "main.js": "/static/js/main.1c05e5b2.js",
+    "static/media/logo.svg": "/static/media/logo.63d465bbc49f418db6e3a2f972bfff68.svg",
+    "index.html": "/index.html",
+    "static/media/bag-shopping.svg": "/static/media/bag-shopping.ff531c2b568af2512a92.svg",
+    "static/media/chevron-up.svg": "/static/media/chevron-up.943270b338012adf7da1.svg",
+    "static/media/chevron-down.svg": "/static/media/chevron-down.9f3fed373b98184833e6.svg",
+    "main.979bbd62.css.map": "/static/css/main.979bbd62.css.map",
+    "main.1c05e5b2.js.map": "/static/js/main.1c05e5b2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.979bbd62.css",
+    "static/js/main.1c05e5b2.js"
+  ]
+}
