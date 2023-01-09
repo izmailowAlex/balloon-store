@@ -1,4 +1,5 @@
 import React from 'react'
+import { IInputProps } from '../../../interfaces/interface'
 import './Input.css'
 
 function Input (
@@ -15,11 +16,9 @@ function Input (
     maxlength,
     onChange,
     onFocus,
-    onBlur,
-    onKeyDown,
-  },
-  ref
-) {
+  }: IInputProps
+): JSX.Element {
+
   let classname = className ? 'input ' + className : 'input'
   classname = label ? classname + ' input_labeled' : classname
   classname = error ? classname + ' input_error' : classname
@@ -30,16 +29,15 @@ function Input (
       <input
         className="input__textbox"
         type="text"
-        ref={ref}
         name={name}
         value={value}
         placeholder={placeholder}
         autoComplete="off"
         maxLength={maxlength}
-        onChange={onChange}
+        onChange={(event) => {
+            onChange(Number(event.target.value))
+        }}
         onFocus={onFocus}
-        onBlur={onBlur}
-        onKeyDown={onKeyDown}
       />
       {label ? <label className="input__label">{label}</label> : ''}
       {error ? <span className="input__message">{errorMessage}</span> : ''}
@@ -48,6 +46,4 @@ function Input (
   )
 }
 
-const forwardedInput = React.forwardRef(Input)
-
-export default forwardedInput
+export default Input
