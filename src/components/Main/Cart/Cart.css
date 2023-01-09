@@ -33,7 +33,7 @@
 }
 
 .cart__cart-clear {
-  font-family: "Nunito Sans", Arial, sans-serif;
+  font-family: 'Nunito Sans', Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: var(--base-color);
@@ -70,7 +70,7 @@
 }
 
 .cart__amount::after {
-  content: " ₽";
+  content: ' ₽';
 }
 
 .cart__checkout {

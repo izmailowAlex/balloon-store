@@ -32,7 +32,7 @@
 }
 
 .product-view__tag {
-  font-family: "Nunito Sans", Arial, sans-serif;
+  font-family: 'Nunito Sans', Arial, sans-serif;
   font-size: 14px;
   font-weight: 600;
   padding: 4px 10px;
@@ -80,7 +80,7 @@
 }
 
 .product-view__old-price::before {
-  content: "";
+  content: '';
   display: block;
   width: 100%;
   height: 4px;
@@ -93,7 +93,7 @@
 
 .product-view__current-price::after,
 .product-view__old-price::after {
-  content: " ₽";
+  content: ' ₽';
 }
 
 .product-view__control-group {
@@ -105,7 +105,7 @@
 }
 
 .product-view__description {
-  font-family: "Nunito Sans", Arial, sans-serif;
+  font-family: 'Nunito Sans', Arial, sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.4;

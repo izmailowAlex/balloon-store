@@ -33,7 +33,6 @@
 }
 
 .checkout__input {
-
 }
 
 .checkout__credit-card {
@@ -75,7 +74,7 @@
 
 .checkout__button-close::before,
 .checkout__button-close::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 34px;
   height: 2px;

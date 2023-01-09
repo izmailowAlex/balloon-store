@@ -22,7 +22,7 @@
 }
 
 .actions-menu__quantity {
-  font-family: "Nunito Sans", Arial, sans-serif;
+  font-family: 'Nunito Sans', Arial, sans-serif;
   font-size: 10px;
   font-weight: 800;
   position: absolute;
@@ -59,11 +59,11 @@
   padding-left: 20px;
   color: var(--base-color);
   -webkit-transition: color 0.3s ease-in-out;
-          transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .actions-menu__amount::after {
-  content: " ₽";
+  content: ' ₽';
 }
 
 .icon {
@@ -75,7 +75,7 @@
   height: 20px;
   color: var(--base-color);
   -webkit-transition: color 0.3s ease-in-out;
-          transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .icon__svg {

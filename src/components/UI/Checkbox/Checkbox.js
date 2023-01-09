@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 import './Checkbox.css';
 
-function Checkbox({children, className, onChange}) {
+function Checkbox ({children, className, onChange}) {
   const classname = className ? "checkbox " + className : "checkbox"
 
   return (
