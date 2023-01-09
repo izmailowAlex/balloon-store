@@ -19,6 +19,10 @@
         "react"
     ],
     "rules": {
-        "@typescript-eslint/no-explicit-any": "warn"
+        "comma-dangle": "off",
+        "@typescript-eslint/comma-dangle": "off",
+        "react/prop-types": "off",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx"] }]
     }
 }

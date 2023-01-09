@@ -7,21 +7,23 @@ function Button ({
   children,
   className,
   to,
-  onClick,
+  onClick
 }: IButtonProps): JSX.Element {
-  const classname = className ? 'button ' + className : 'button'
+  let classname = 'button'
+
+  if (className !== undefined) {
+    classname = 'button ' + className
+  }
 
   return (
     <>
-      {to ? (
-        <Link className={classname} onClick={onClick} to={to}>
+      {to
+        ? (<Link className={classname} onClick={onClick} to={to}>
           {children}
-        </Link>
-      ) : (
-        <button className={classname} onClick={onClick}>
+        </Link>)
+        : (<button className={classname} onClick={onClick}>
           {children}
-        </button>
-      )}
+        </button>)}
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../../../../../App'
 import Checkbox from '../../../../UI/Checkbox/Checkbox.tsx'
 import Dualslider from '../../../../UI/Dualslider/Dualslider'
@@ -49,7 +49,7 @@ function Filter () {
   const { setFilteredList } = useContext(CatalogContext)
   const [filters, setFilters] = useState({})
 
-  function onChangeHandler(event, item, category) {
+  function onChangeHandler (event, item, category) {
     const tempFilters = { ...filters }
     if (event.target.checked === true) {
       if (tempFilters[category]) {
@@ -68,9 +68,9 @@ function Filter () {
     setFilters({ ...tempFilters })
   }
 
-  function applyFilter() {
+  function applyFilter () {
     const tempFilteredList = productsLibrary.filter((item) => {
-      for (let key in filters) {
+      for (const key in filters) {
         if (!filters[key].includes(item[key])) {
           return false
         }

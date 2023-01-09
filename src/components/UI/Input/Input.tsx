@@ -15,14 +15,22 @@ function Input (
     successMessage,
     maxlength,
     onChange,
-    onFocus,
+    onFocus
   }: IInputProps
 ): JSX.Element {
-
-  let classname = className ? 'input ' + className : 'input'
-  classname = label ? classname + ' input_labeled' : classname
-  classname = error ? classname + ' input_error' : classname
-  classname = success ? classname + ' input_success' : classname
+  let classname = 'input'
+  if (className !== undefined) {
+    classname = 'input ' + className
+  }
+  if (label !== undefined) {
+    classname = classname + ' input_labeled'
+  }
+  if (error !== undefined) {
+    classname = classname + ' input_error'
+  }
+  if (success !== undefined) {
+    classname = classname + ' input_success'
+  }
 
   return (
     <div className={classname}>
@@ -34,12 +42,9 @@ function Input (
         placeholder={placeholder}
         autoComplete="off"
         maxLength={maxlength}
-        onChange={(event) => {
-            onChange(Number(event.target.value))
-        }}
+        onChange={(event) => { onChange(Number(event.target.value)) }}
         onFocus={onFocus}
-      />
-      {label ? <label className="input__label">{label}</label> : ''}
+      />{label ? <label className="input__label">{label}</label> : ''}
       {error ? <span className="input__message">{errorMessage}</span> : ''}
       {success ? <span className="input__message">{successMessage}</span> : ''}
     </div>

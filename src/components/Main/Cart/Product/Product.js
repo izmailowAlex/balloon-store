@@ -1,3 +1,4 @@
+import React from 'react'
 import './Product.css'
 import Checkbox from '../../../UI/Checkbox/Checkbox.tsx'
 import Counter from '../../../UI/Counter/Counter'

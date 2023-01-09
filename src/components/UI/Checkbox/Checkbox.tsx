@@ -6,7 +6,7 @@ import './Checkbox.css'
 function Checkbox ({
   children,
   className,
-  onChange,
+  onChange
 }: ICheckboxProps): JSX.Element {
   const classname = className ? 'checkbox ' + className : 'checkbox'
 

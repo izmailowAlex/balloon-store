@@ -1,7 +1,7 @@
-import './Checkout.css'
+import React, { useState } from 'react'
 import Input from '../../UI/Input/Input'
 import Button from '../../UI/Button/Button'
-import { useState } from 'react'
+import './Checkout.css'
 
 function Checkout ({ setPopupWindow }) {
   const [errorName, setErrorName] = useState(false)
@@ -13,11 +13,11 @@ function Checkout ({ setPopupWindow }) {
   const [errorCardDate, setErrorCardDate] = useState(false)
   const [errorCardCVC, setErrorCardCVC] = useState(false)
 
-  function confirmOrderHandler() {
+  function confirmOrderHandler () {
     console.log('Confirm Order')
   }
 
-  function checkNameHandler(value) {
+  function checkNameHandler (value) {
     const reg = /^[а-яА-Яa-zA-Z]+ [а-яА-Яa-zA-Z]+$/
     if (String(value).match(reg)) {
       setErrorName(false)
@@ -26,9 +26,8 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkPhoneHandler(value) {
-    const reg =
-      /^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}(([\- ]?\d{1})?[\- ]?\d{1})?$/
+  function checkPhoneHandler (value) {
+    const reg = /^[0-9]$/
     if (String(value).match(reg)) {
       setErrorPhone(false)
     } else {
@@ -36,7 +35,7 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkAddressHandler(value) {
+  function checkAddressHandler (value) {
     const reg = /^[а-яА-Яa-zA-Z\d,./ ]+$/
     if (String(value).match(reg)) {
       setErrorAddress(false)
@@ -45,7 +44,7 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkEmailHandler(value) {
+  function checkEmailHandler (value) {
     const reg = /^[A-Z\d._%+-]+@[A-Z\d-]+.[A-Z]{2,4}$/i
     if (String(value).match(reg)) {
       setErrorEmail(false)
@@ -54,7 +53,7 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkCardholderName(value) {
+  function checkCardholderName (value) {
     const reg = /^[A-Z]+ [A-Z]+$/
     if (String(value).match(reg)) {
       setErrorCardholderName(false)
@@ -63,7 +62,7 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkCardNumber(value) {
+  function checkCardNumber (value) {
     const reg = /^\d{16}$/
     if (String(value).match(reg)) {
       setErrorCardNumber(false)
@@ -72,7 +71,7 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkCardDate(value) {
+  function checkCardDate (value) {
     const reg = /^\d{2}\/\d{2}$/
     if (String(value).match(reg)) {
       setErrorCardDate(false)
@@ -81,7 +80,7 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkCardCVC(value) {
+  function checkCardCVC (value) {
     const reg = /^\d{3}$/
     if (String(value).match(reg)) {
       setErrorCardCVC(false)

@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { CatalogContext } from '../Catalog'
 import Card from './Card/Card'
 
