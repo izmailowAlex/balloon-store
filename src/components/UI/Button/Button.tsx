@@ -1,26 +1,29 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { IButtonProps } from '../../../interfaces/interface'
 import './Button.css'
-import {Link} from 'react-router-dom'
 
-type ButtonProps = {
-  children: string,
-  className: string,
-  to: string,
-  button: boolean,
-  onClick: () => Event | undefined
-}
-
-function Button({children, className, to, button, onClick}: ButtonProps): JSX.Element {
-  const classname = className ? 'button ' + className : 'button';
+function Button ({
+  children,
+  className,
+  to,
+  onClick,
+}: IButtonProps): JSX.Element {
+  const classname = className ? 'button ' + className : 'button'
 
   return (
     <>
-      {button
-        ? <button className={classname} onClick={onClick}>{children}</button>
-        : <Link className={classname} onClick={onClick} to={to}>{children}</Link>
-      }
+      {to ? (
+        <Link className={classname} onClick={onClick} to={to}>
+          {children}
+        </Link>
+      ) : (
+        <button className={classname} onClick={onClick}>
+          {children}
+        </button>
+      )}
     </>
-  );
+  )
 }
 
-export default Button;
+export default Button

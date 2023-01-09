@@ -1,7 +1,16 @@
+import { To } from 'react-router-dom'
+
 export interface ICheckboxProps {
   children: string | undefined
   className: string | undefined
   onChange: () => Event | undefined
+}
+
+export interface IButtonProps {
+  children: string
+  className: string
+  to?: To
+  onClick?: () => Event
 }
 
 export interface ICounterProps {
@@ -31,6 +40,10 @@ export interface IProduct {
   producer: string
   country: string
   description: string
+}
+
+export interface IProductsLibrary {
+  productsLibrary: IProduct[]
 }
 
 export type Callback<T> = (data?: T) => void
