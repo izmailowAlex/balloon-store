@@ -4,4 +4,10 @@ export interface ICheckboxProps {
   onChange: () => Event | undefined
 }
 
+export interface ICounterProps {
+  count: number
+  min: number
+  max: number
+}
+
 export type Callback<T> = (data?: T) => void
