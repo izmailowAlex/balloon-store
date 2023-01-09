@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './Nav.css'
 
@@ -8,16 +9,6 @@ function Nav () {
         <li className="nav__item">
           <Link className="nav__link" to="/catalog/">
             Каталог
-          </Link>
-        </li>
-        <li className="nav__item">
-          <Link className="nav__link" to="/productview/">
-            Товар
-          </Link>
-        </li>
-        <li className="nav__item">
-          <Link className="nav__link" to="/checkout/">
-            Оформление
           </Link>
         </li>
         <li className="nav__item">
