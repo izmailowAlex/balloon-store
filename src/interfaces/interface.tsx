@@ -1,4 +1,5 @@
 import {FocusEvent} from 'react';
+import { To } from 'react-router-dom'
 
 export interface ICheckboxProps {
   children: string | undefined
@@ -20,3 +21,45 @@ export interface IInputProps {
     onChange: (value: number) => void
     onFocus?: (event: FocusEvent<any>) => void
 }
+
+export interface IButtonProps {
+  children: string
+  className: string
+  to?: To
+  onClick?: () => Event
+}
+
+export interface ICounterProps {
+  count: number
+  min: number
+  max: number
+}
+
+export interface ICardProps {
+  product: IProduct
+}
+
+export interface IProduct {
+  id: string
+  title: string
+  image: string
+  count: number
+  min: number
+  max: number
+  price: number
+  instock: boolean
+  discount: number
+  category: string
+  type: string
+  color: string
+  size: string
+  producer: string
+  country: string
+  description: string
+}
+
+export interface IProductsLibrary {
+  productsLibrary: IProduct[]
+}
+
+export type Callback<T> = (data?: T) => void

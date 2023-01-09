@@ -7,6 +7,12 @@
   border-radius: 8px;
   overflow: hidden;
   position: relative;
+  transition: box-shadow 0.3s linear;
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.card:hover {
+  box-shadow: 0 2px 4px 2px rgba(180, 180, 180, 0.5);
 }
 
 .card::before {
