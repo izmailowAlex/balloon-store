@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Button from '../../UI/Button/Button'
 import Input from '../../UI/Input/Input'
 import Checkbox from '../../UI/Checkbox/Checkbox.tsx'
@@ -27,8 +27,8 @@ function Cart () {
           <ul className="cart__list">
             <li className="cart__item">
               <Product
-                name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт."
-                image="../../images/cat.png"
+                name="Шар (5''/13 см) Синий, пастель"
+                image="../../images/605112.jpg"
                 price={5}
                 count={1}
                 min={1}
@@ -37,8 +37,8 @@ function Cart () {
             </li>
             <li className="cart__item">
               <Product
-                name="Шар (22''/56 см) Фигура, Крутой Кот, 1 шт."
-                image="../../images/cat.png"
+                name="ШДМ (2''/5 см) Черный, пастель"
+                image="../../images/626118.jpg"
                 price={5}
                 count={1}
                 min={1}
