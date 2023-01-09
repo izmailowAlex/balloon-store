@@ -63,4 +63,3 @@ export interface IProductsLibrary {
 }
 
 export type Callback<T> = (data?: T) => void
-
