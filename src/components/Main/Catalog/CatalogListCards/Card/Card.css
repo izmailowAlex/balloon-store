@@ -26,6 +26,12 @@
   margin: auto;
 }
 
+.card__image {
+  width: 150px;
+  height: 175px;
+  object-fit: contain;
+}
+
 .card__title {
   margin: 20px 0;
 }
