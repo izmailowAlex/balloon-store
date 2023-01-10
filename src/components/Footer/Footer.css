@@ -25,8 +25,30 @@
   margin: 0;
 }
 
-.rsschool {
+.contributors__link {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--grey-color);
+  transition: color 0.3s ease-in-out;
+}
+
+.contributors__link:hover {
+  color: var(--base-color);
+}
+
+.contributors__link-label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.contributors__icon {
   display: inline-block;
+}
+
+.rsschool {
   width: 81px;
   height: 30px;
 }
@@ -40,7 +62,6 @@
 }
 
 .github {
-  display: inline-block;
   width: 30px;
   height: 30px;
 }
