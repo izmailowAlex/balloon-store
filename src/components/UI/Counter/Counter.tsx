@@ -7,7 +7,7 @@ function Counter ({ count, min, max }: ICounterProps): JSX.Element {
   const inputRef = useRef<HTMLInputElement>(null)
 
   function increment (): void {
-    let value: number = currentVal as number
+    let value = currentVal
     value = value + 1
     if (isRange(value)) {
       setCurrentVal(value)
@@ -15,7 +15,7 @@ function Counter ({ count, min, max }: ICounterProps): JSX.Element {
   }
 
   function decrement (): void {
-    let value: number = currentVal as number
+    let value = currentVal
     value = value - 1
     if (isRange(value)) {
       setCurrentVal(value)

@@ -17,7 +17,7 @@ function Button ({
 
   return (
     <>
-      {to
+      {to !== undefined
         ? (<Link className={classname} onClick={onClick} to={to}>
           {children}
         </Link>)

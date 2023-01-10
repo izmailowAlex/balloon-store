@@ -8,7 +8,11 @@ function Checkbox ({
   className,
   onChange
 }: ICheckboxProps): JSX.Element {
-  const classname = className ? 'checkbox ' + className : 'checkbox'
+  let classname = 'checkbox'
+
+  if (className !== undefined) {
+    classname = 'checkbox ' + className
+  }
 
   return (
     <label className={classname}>

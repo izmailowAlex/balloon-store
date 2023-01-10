@@ -44,9 +44,10 @@ function Input (
         maxLength={maxlength}
         onChange={(event) => { onChange(Number(event.target.value)) }}
         onFocus={onFocus}
-      />{label ? <label className="input__label">{label}</label> : ''}
-      {error ? <span className="input__message">{errorMessage}</span> : ''}
-      {success ? <span className="input__message">{successMessage}</span> : ''}
+      />
+      {label !== undefined && <label className="input__label">{label}</label>}
+      {error !== undefined && <span className="input__message">{errorMessage}</span>}
+      {success !== undefined && <span className="input__message">{successMessage}</span>}
     </div>
   )
 }
