@@ -15,7 +15,8 @@ function Input (
     successMessage,
     maxlength,
     onChange,
-    onFocus
+    onFocus,
+    onBlur
   }: IInputProps
 ): JSX.Element {
   let classname = 'input'
@@ -25,16 +26,16 @@ function Input (
   if (label !== undefined) {
     classname = classname + ' input_labeled'
   }
-  if (error !== undefined) {
+  if (error === true) {
     classname = classname + ' input_error'
   }
-  if (success !== undefined) {
+  if (success === true) {
     classname = classname + ' input_success'
   }
 
   return (
     <div className={classname}>
-      <input
+    <input
         className="input__textbox"
         type="text"
         name={name}
@@ -42,12 +43,13 @@ function Input (
         placeholder={placeholder}
         autoComplete="off"
         maxLength={maxlength}
-        onChange={(event) => { onChange(Number(event.target.value)) }}
+        onChange={onChange}
         onFocus={onFocus}
+        onBlur={onBlur}
       />
-      {label !== undefined && <label className="input__label">{label}</label>}
-      {error !== undefined && <span className="input__message">{errorMessage}</span>}
-      {success !== undefined && <span className="input__message">{successMessage}</span>}
+      {label !== '' && <label className="input__label">{label}</label>}
+      {error === true && <span className="input__message">{errorMessage}</span>}
+      {success === true && <span className="input__message">{successMessage}</span>}
     </div>
   )
 }

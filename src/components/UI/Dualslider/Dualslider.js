@@ -17,7 +17,6 @@ function Dualslider ({ min, max }) {
   useEffect(() => {
     const minPercent = getPercent(minVal)
     const maxPercent = getPercent(maxVal)
-
     if (range.current) {
       range.current.style.left = `${minPercent}%`
       range.current.style.width = `${maxPercent - minPercent}%`
@@ -83,7 +82,7 @@ function Dualslider ({ min, max }) {
           label={'от'}
           maxlength={String(max).length}
           onFocus={(event) => event.target.select()}
-          onChange={changeMinValHandler}
+          onChange={(event) => changeMinValHandler(Number(event.target.value))}
         />
         <Input
           className="dualslider__max-value"
@@ -91,7 +90,7 @@ function Dualslider ({ min, max }) {
           label={'до'}
           maxlength={String(max).length}
           onFocus={(event) => event.target.select()}
-          onChange={changeMaxValHandler}
+          onChange={(event) => changeMaxValHandler(Number(event.target.value))}
         />
       </div>
     </div>

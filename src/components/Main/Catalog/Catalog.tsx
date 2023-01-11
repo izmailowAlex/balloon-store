@@ -4,7 +4,7 @@ import Filter from './CatalogListCards/Filter/Filter'
 import CatalogListCards from './CatalogListCards/CatalogListCards'
 import './Catalog.css'
 
-export const CatalogContext = React.createContext()
+export const CatalogContext = React.createContext({})
 
 function Catalog () {
   const { productsLibrary } = useContext(AppContext)
