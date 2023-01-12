@@ -1,4 +1,4 @@
-import { MouseEvent, ChangeEvent, FocusEvent } from 'react';
+import React, { MouseEvent, ChangeEvent, FocusEvent } from 'react';
 import { To } from 'react-router-dom'
 
 export interface IItem {
@@ -115,4 +115,8 @@ export interface IProductProps {
   count: number
   min: number
   max: number
+}
+
+export interface ICheckoutProps {
+  setPopupWindow: React.Dispatch<React.SetStateAction<boolean>>
 }
