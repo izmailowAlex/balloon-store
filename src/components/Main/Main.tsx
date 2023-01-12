@@ -8,7 +8,7 @@ import Checkout from './Checkout/Checkout'
 import Page404 from './Page404/Page404'
 import './Main.css'
 
-function Main () {
+function Main (): JSX.Element {
   return (
     <main className="main">
       <div className="main__container container">
