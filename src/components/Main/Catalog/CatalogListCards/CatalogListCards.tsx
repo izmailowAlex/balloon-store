@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { CatalogContext } from '../Catalog'
 import Card from './Card/Card'
 
-function CatalogListCards () {
+function CatalogListCards (): JSX.Element {
   const { filteredList } = useContext(CatalogContext)
 
   return (

@@ -27,7 +27,7 @@ function ProductView (): JSX.Element {
         }
         <div className='product-view__price'>
           <span className='product-view__current-price'>{currentProduct.price}</span>
-          {currentProduct.discount
+          {currentProduct.discount !== 0
             ? <span className='product-view__old-price'>{Math.round(currentProduct.price * ((currentProduct.discount + 100) / 100))}</span>
             : ''
           }

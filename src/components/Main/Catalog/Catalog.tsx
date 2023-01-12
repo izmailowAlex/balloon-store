@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, Dispatch, SetStateAction } from 'react'
 import { AppContext } from '../../../App'
 import Filter from './CatalogListCards/Filter/Filter'
 import CatalogListCards from './CatalogListCards/CatalogListCards'
@@ -7,9 +7,10 @@ import { IProduct } from '../../../interfaces/interface'
 
 interface ICatalogContext {
   filteredList: IProduct[]
+  setFilteredList: Dispatch<SetStateAction<IProduct[]>>
 }
-
-export const CatalogContext = React.createContext({} as ICatalogContext)
+const context: ICatalogContext = { filteredList: [], setFilteredList: () => {} }
+export const CatalogContext = React.createContext(context)
 
 function Catalog (): JSX.Element {
   const { productsLibrary } = useContext(AppContext)
@@ -18,7 +19,7 @@ function Catalog (): JSX.Element {
     <div className="main__catalog">
       <h2 className="main__catalog-title">Каталог шаров</h2>
       <div className="main__catalog-contain">
-        <CatalogContext.Provider value={{ filteredList }}>
+        <CatalogContext.Provider value={{ filteredList, setFilteredList }}>
           <Filter />
           <CatalogListCards />
         </CatalogContext.Provider>

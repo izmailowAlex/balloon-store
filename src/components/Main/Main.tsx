@@ -4,7 +4,6 @@ import Home from './Home/Home'
 import Catalog from './Catalog/Catalog'
 import Cart from './Cart/Cart'
 import ProductView from './ProductView/ProductView'
-import Checkout from './Checkout/Checkout'
 import Page404 from './Page404/Page404'
 import './Main.css'
 
@@ -17,7 +16,6 @@ function Main (): JSX.Element {
           <Route path="/catalog/" element={<Catalog />} />
           <Route path="/cart/" element={<Cart />} />
           <Route path="/productview/:number" element={<ProductView />} />
-          <Route path="/checkout/" element={<Checkout />} />
           <Route path="/page404/" element={<Page404 />} />
         </Routes>
       </div>

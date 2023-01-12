@@ -1,13 +1,10 @@
 import React, { useRef, useState } from 'react'
 import Input from '../../UI/Input/Input'
 import Button from '../../UI/Button/Button'
+import { ICheckoutProps } from '../../../interfaces/interface'
 import './Checkout.css'
 
-interface ICheckoutProps {
-  setPopupWindow: React.Dispatch<React.SetStateAction<boolean>>
-}
-
-function Checkout ({ setPopupWindow }:ICheckoutProps) {
+function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
   const [errors, setErrors] = useState(false)
   const [confirm, setConfirm] = useState(false)
   const [errorName, setErrorName] = useState(false)
@@ -18,10 +15,9 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
   const [errorCardNumber, setErrorCardNumber] = useState(false)
   const [errorCardDate, setErrorCardDate] = useState(false)
   const [errorCardCVC, setErrorCardCVC] = useState(false)
-
   const checkoutFieldsRef = useRef<HTMLDivElement>(null)
 
-  function confirmOrderHandler () {
+  function confirmOrderHandler (): void {
     const inputName = document.querySelector('[name=name]') as HTMLInputElement
     checkNameHandler(inputName.value)
     const inputPhone = document.querySelector('[name=phone]') as HTMLInputElement
@@ -48,8 +44,11 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
     }
   }
 
-  function checkNameHandler (value: string) {
+  function checkNameHandler (value: string): void {
     const reg = /^[а-яА-Яa-zA-Z]+ [а-яА-Яa-zA-Z]+$/
+    if (value === null) {
+      value = ''
+    }
     if (value.match(reg)) {
       setErrors(false)
       setErrorName(false)
@@ -59,7 +58,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
     }
   }
 
-  function checkPhoneHandler (value: string) {
+  function checkPhoneHandler (value: string): void {
     const reg = /^(8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[-(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/
     if (value.match(reg)) {
       setErrors(false)
@@ -70,7 +69,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
     }
   }
 
-  function checkAddressHandler (value: string) {
+  function checkAddressHandler (value: string): void {
     const reg = /^[а-яА-Яa-zA-Z\d,./ ]+$/
     if (value.match(reg)) {
       setErrors(false)
@@ -81,7 +80,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
     }
   }
 
-  function checkEmailHandler (value: string) {
+  function checkEmailHandler (value: string): void {
     const reg = /^[A-Z\d._%+-]+@[A-Z\d-]+.[A-Z]{2,4}$/i
     if (value.match(reg)) {
       setErrors(false)
@@ -92,7 +91,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
     }
   }
 
-  function checkCardholderName (value: string) {
+  function checkCardholderName (value: string): void {
     const reg = /^[A-Z]+ [A-Z]+$/
     if (value.match(reg)) {
       setErrors(false)
@@ -103,7 +102,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
     }
   }
 
-  function checkCardNumber (value: string) {
+  function checkCardNumber (value: string): void {
     const reg = /^\d{16}$/
     if (value.match(reg)) {
       setErrors(false)
@@ -114,7 +113,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
     }
   }
 
-  function checkCardDate (value: string) {
+  function checkCardDate (value: string): void {
     const reg = /^\d{2}\/\d{2}$/
     if (value.match(reg)) {
       setErrors(false)
@@ -125,7 +124,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
     }
   }
 
-  function checkCardCVC (value: string) {
+  function checkCardCVC (value: string): void {
     const reg = /^\d{3}$/
     if (value.match(reg)) {
       setErrors(false)
@@ -150,7 +149,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
                 maxlength={30}
                 error={errorName}
                 errorMessage="Неверный формат имени"
-                onBlur={(event) => checkNameHandler(event.target.value)}
+                onBlur={(event) => { checkNameHandler(event.target.value) }}
               />
               <Input
                 className="checkout__input"
@@ -159,7 +158,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
                 maxlength={14}
                 error={errorPhone}
                 errorMessage="Неверный формат телефона"
-                onBlur={(event) => checkPhoneHandler(event.target.value)}
+                onBlur={(event) => { checkPhoneHandler(event.target.value) }}
               />
               <Input
                 className="checkout__input"
@@ -168,7 +167,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
                 maxlength={100}
                 error={errorAddress}
                 errorMessage="Неверный формат адреса"
-                onBlur={(event) => checkAddressHandler(event.target.value)}
+                onBlur={(event) => { checkAddressHandler(event.target.value) }}
               />
               <Input
                 className="checkout__input"
@@ -177,7 +176,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
                 maxlength={50}
                 error={errorEmail}
                 errorMessage="Неверный формат E-mail"
-                onBlur={(event) => checkEmailHandler(event.target.value)}
+                onBlur={(event) => { checkEmailHandler(event.target.value) }}
               />
               <div className="checkout__credit-card credit-card">
                 <Input
@@ -187,7 +186,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
                   maxlength={30}
                   error={errorCardholderName}
                   errorMessage="Неверный формат держателя карты"
-                  onBlur={(event) => checkCardholderName(event.target.value)}
+                  onBlur={(event) => { checkCardholderName(event.target.value) }}
                 />
                 <Input
                   className="credit-card__input"
@@ -196,7 +195,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
                   maxlength={16}
                   error={errorCardNumber}
                   errorMessage="Неверный формат номера карты"
-                  onBlur={(event) => checkCardNumber(event.target.value)}
+                  onBlur={(event) => { checkCardNumber(event.target.value) }}
                 />
                 <div className="credit-card__expiration">
                   <Input
@@ -206,7 +205,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
                     maxlength={5}
                     error={errorCardDate}
                     errorMessage="Неверная дата"
-                    onBlur={(event) => checkCardDate(event.target.value)}
+                    onBlur={(event) => { checkCardDate(event.target.value) }}
                   />
                   <Input
                     className="credit-card__input"
@@ -215,7 +214,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
                     maxlength={3}
                     error={errorCardCVC}
                     errorMessage="Неверный CVC"
-                    onBlur={(event) => checkCardCVC(event.target.value)}
+                    onBlur={(event) => { checkCardCVC(event.target.value) }}
                   />
                 </div>
               </div>
@@ -231,7 +230,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
             <h2 className="checkout__title">Заказ подтвержден</h2>
             <Button
               className="checkout__button-confirm"
-              onClick={() => setPopupWindow(false)}
+              onClick={() => { setPopupWindow(false) }}
             >
               В каталог
             </Button>
@@ -240,9 +239,7 @@ function Checkout ({ setPopupWindow }:ICheckoutProps) {
         }
         <button
           className="checkout__button-close"
-          onClick={() => {
-            setPopupWindow(false)
-          }}
+          onClick={() => { setPopupWindow(false) }}
         ></button>
       </div>
     </div>

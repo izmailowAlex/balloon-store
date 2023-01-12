@@ -10,11 +10,11 @@ import './App.css'
 interface IAppContext {
   productsLibrary: IProduct[]
 }
-
-export const AppContext = React.createContext({} as IAppContext)
+const context: IAppContext = { productsLibrary: [] }
+export const AppContext = React.createContext(context)
 
 function App (): JSX.Element {
-  const [productsLibrary, setProductsLibrary] = useState<IProduct[]>(data)
+  const [productsLibrary] = useState<IProduct[]>(data)
 
   return (
     <div className="balloon">
