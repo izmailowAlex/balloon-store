@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from '../../UI/Button/Button'
 import Input from '../../UI/Input/Input'
-import Checkbox from '../../UI/Checkbox/Checkbox.tsx'
+import Checkbox from '../../UI/Checkbox/Checkbox'
 import Product from './Product/Product'
 import Checkout from '../Checkout/Checkout'
 import './Cart.css'
@@ -58,7 +58,6 @@ function Cart () {
           />
           <Button
             className="cart__checkout"
-            button={true}
             onClick={() => setPopupWindow(true)}
           >
             Оформить заказ
