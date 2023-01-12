@@ -98,5 +98,5 @@
 }
 
 .card__button:hover:before {
-  transform: scale(2.4);
+  transform: scale(2.5);
 }
