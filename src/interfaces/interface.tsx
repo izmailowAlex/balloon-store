@@ -1,25 +1,6 @@
 import React, { MouseEvent, ChangeEvent, FocusEvent } from 'react';
 import { To } from 'react-router-dom'
 
-export interface IItem {
-  id: string
-  title: string
-  image: string
-  count: number
-  min: number
-  max: number
-  price: number
-  instock: boolean
-  discount: number
-  category: string
-  type: string
-  color: string
-  size: string
-  producer: string
-  country: string
-  description: string
-}
-
 export interface ICheckboxProps {
   children?: string
   className?: string
