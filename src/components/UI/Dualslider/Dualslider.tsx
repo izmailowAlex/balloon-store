@@ -20,7 +20,7 @@ function Dualslider ({ min, max }: IDualslider): JSX.Element {
     const maxPercent = getPercent(maxVal)
 
     const currentElem = range.current
-    
+
     if (currentElem !== null) {
         currentElem.style.left = `${minPercent}%`
         currentElem.style.width = `${maxPercent - minPercent}%`
@@ -86,7 +86,7 @@ function Dualslider ({ min, max }: IDualslider): JSX.Element {
           label={'от'}
           maxlength={String(max).length}
           onFocus={(event) => event.target.select()}
-          onChange={changeMinValHandler}
+          onChange={(event) => changeMinValHandler(Number(event.target.value))}
         />
         <Input
           className="dualslider__max-value"
@@ -94,7 +94,7 @@ function Dualslider ({ min, max }: IDualslider): JSX.Element {
           label={'до'}
           maxlength={String(max).length}
           onFocus={(event) => event.target.select()}
-          onChange={changeMaxValHandler}
+          onChange={(event) => changeMaxValHandler(Number(event.target.value))}
         />
       </div>
     </div>
