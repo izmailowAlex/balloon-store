@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Nav.css'
 
-function Nav () {
+function Nav (): JSX.Element {
   return (
     <nav className="nav">
       <ul className="nav__list">
