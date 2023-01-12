@@ -1,4 +1,4 @@
-import { ChangeEvent, FocusEvent } from 'react';
+import { MouseEvent, ChangeEvent, FocusEvent } from 'react';
 import { To } from 'react-router-dom'
 
 export interface IItem {
@@ -46,7 +46,7 @@ export interface IButtonProps {
   children: string
   className?: string
   to?: To
-  onClick?: () => Event
+  onClick?: (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
 }
 
 export interface ICounterProps {
