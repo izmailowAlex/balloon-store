@@ -6,6 +6,12 @@ import Checkbox from '../../../../UI/Checkbox/Checkbox'
 import Dualslider from '../../../../UI/Dualslider/Dualslider'
 import './Filter.css'
 
+interface IFilterCategories {
+  category?: string[]
+  type?: string[]
+  color?: string[]
+}
+
 function Filter (): JSX.Element {
   const [currentindex, setCurrentIndex] = useState(0)
   const [allCategories, setAllCategories] = useState<string[]>([])
@@ -13,7 +19,7 @@ function Filter (): JSX.Element {
   const [allColors, setAllColors] = useState<string[]>([])
   const { productsLibrary } = useContext(AppContext)
   const { setFilteredList } = useContext(CatalogContext)
-  const [filters, setFilters] = useState<IFilterCategories>({ category: [], type: [], color: [] })
+  const [filters, setFilters] = useState<IFilterCategories>({})
 
   useEffect(() => {
     if (productsLibrary.length > 0) {
@@ -49,26 +55,24 @@ function Filter (): JSX.Element {
     }
   }, [currentindex, setCurrentIndex])
 
-  interface IFilterCategories {
-    category?: string[]
-    type?: string[]
-    color?: string[]
-  }
+  useEffect(() => {
+    applyFilter()
+  }, [filters])
 
-  function onChangeHandler (event: ChangeEvent<HTMLInputElement>, item: string, category: keyof IFilterCategories): void {
+  function onChangeHandler (event: ChangeEvent<HTMLInputElement>, item: string, key: keyof IFilterCategories): void {
     const tempFilters: IFilterCategories = { ...filters }
     if (event.target.checked) {
-      if (tempFilters.category !== undefined) {
-        tempFilters.category?.push(item)
+      if (tempFilters[key] !== undefined) {
+        tempFilters[key]?.push(item)
       } else {
-        tempFilters[category] = [item]
+        tempFilters[key] = [item]
       }
     } else {
-      tempFilters.category = tempFilters.category?.filter(
+      tempFilters[key] = tempFilters[key]?.filter(
         (element: string) => element !== item
       )
-      if (tempFilters.category?.length === 0) {
-        delete tempFilters.category
+      if (tempFilters[key]?.length === 0) {
+        delete tempFilters[key]
       }
     }
     setFilters({ ...tempFilters })
@@ -79,7 +83,7 @@ function Filter (): JSX.Element {
       let key: keyof IFilterCategories
       for (key in filters) {
         const includes = filters[key]?.includes(item[key])
-        if (includes === undefined) {
+        if (includes === false) {
           return false
         }
       }
@@ -87,10 +91,6 @@ function Filter (): JSX.Element {
     })
     setFilteredList([...tempFilteredList])
   }
-
-  useEffect(() => {
-    applyFilter()
-  }, [filters])
 
   return (
     <div className="main__catalog-filter filter">
