@@ -29,9 +29,9 @@ export interface ICheckboxProps {
 export interface IInputProps {
   className: string
   name?: string
-  value: string
+  value?: string
   placeholder?: string
-  label: string
+  label?: string
   error?: boolean
   errorMessage?: string
   success?: boolean
