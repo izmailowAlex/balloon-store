@@ -1,9 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Input from '../../UI/Input/Input'
 import Button from '../../UI/Button/Button'
 import './Checkout.css'
 
-function Checkout ({ setPopupWindow }) {
+interface ICheckoutProps {
+  setPopupWindow: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+function Checkout ({ setPopupWindow }:ICheckoutProps) {
   const [errors, setErrors] = useState(false)
   const [confirm, setConfirm] = useState(false)
   const [errorName, setErrorName] = useState(false)
@@ -15,18 +19,27 @@ function Checkout ({ setPopupWindow }) {
   const [errorCardDate, setErrorCardDate] = useState(false)
   const [errorCardCVC, setErrorCardCVC] = useState(false)
 
-  const checkoutFieldsRef = useRef(null)
+  const checkoutFieldsRef = useRef<HTMLDivElement>(null)
 
   function confirmOrderHandler () {
-    checkNameHandler(document.querySelector('[name=name]').value)
-    checkPhoneHandler(document.querySelector('[name=phone]').value)
-    checkAddressHandler(document.querySelector('[name=address]').value)
-    checkEmailHandler(document.querySelector('[name=email]').value)
-    checkCardholderName(document.querySelector('[name=cardHolderName]').value)
-    checkCardNumber(document.querySelector('[name=cardNumber]').value)
-    checkCardDate(document.querySelector('[name=cardDate]').value)
-    checkCardCVC(document.querySelector('[name=cardCVC]').value)
-    if (errors === true) {
+    const inputName = document.querySelector('[name=name]') as HTMLInputElement
+    checkNameHandler(inputName.value)
+    const inputPhone = document.querySelector('[name=phone]') as HTMLInputElement
+    checkPhoneHandler(inputPhone.value)
+    const inputAddress = document.querySelector('[name=address]') as HTMLInputElement
+    checkAddressHandler(inputAddress.value)
+    const inputEmail = document.querySelector('[name=email]') as HTMLInputElement
+    checkEmailHandler(inputEmail.value)
+    const inputCardholderName = document.querySelector('[name=cardHolderName]') as HTMLInputElement
+    checkCardholderName(inputCardholderName.value)
+    const inputCardNumber = document.querySelector('[name=cardNumber]') as HTMLInputElement
+    checkCardNumber(inputCardNumber.value)
+    const inputCardDate = document.querySelector('[name=cardDate]') as HTMLInputElement
+    checkCardDate(inputCardDate.value)
+    const inputCardCVC = document.querySelector('[name=cardCVC]') as HTMLInputElement
+    checkCardCVC(inputCardCVC.value)
+
+    if (errors) {
       setConfirm(false)
       console.log(errors)
     } else {
@@ -35,9 +48,9 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkNameHandler (value) {
+  function checkNameHandler (value: string) {
     const reg = /^[а-яА-Яa-zA-Z]+ [а-яА-Яa-zA-Z]+$/
-    if (String(value).match(reg)) {
+    if (value.match(reg)) {
       setErrors(false)
       setErrorName(false)
     } else {
@@ -46,9 +59,9 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkPhoneHandler (value) {
+  function checkPhoneHandler (value: string) {
     const reg = /^(8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[-(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/
-    if (String(value).match(reg)) {
+    if (value.match(reg)) {
       setErrors(false)
       setErrorPhone(false)
     } else {
@@ -57,9 +70,9 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkAddressHandler (value) {
+  function checkAddressHandler (value: string) {
     const reg = /^[а-яА-Яa-zA-Z\d,./ ]+$/
-    if (String(value).match(reg)) {
+    if (value.match(reg)) {
       setErrors(false)
       setErrorAddress(false)
     } else {
@@ -68,9 +81,9 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkEmailHandler (value) {
+  function checkEmailHandler (value: string) {
     const reg = /^[A-Z\d._%+-]+@[A-Z\d-]+.[A-Z]{2,4}$/i
-    if (String(value).match(reg)) {
+    if (value.match(reg)) {
       setErrors(false)
       setErrorEmail(false)
     } else {
@@ -79,9 +92,9 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkCardholderName (value) {
+  function checkCardholderName (value: string) {
     const reg = /^[A-Z]+ [A-Z]+$/
-    if (String(value).match(reg)) {
+    if (value.match(reg)) {
       setErrors(false)
       setErrorCardholderName(false)
     } else {
@@ -90,9 +103,9 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkCardNumber (value) {
+  function checkCardNumber (value: string) {
     const reg = /^\d{16}$/
-    if (String(value).match(reg)) {
+    if (value.match(reg)) {
       setErrors(false)
       setErrorCardNumber(false)
     } else {
@@ -101,9 +114,9 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkCardDate (value) {
+  function checkCardDate (value: string) {
     const reg = /^\d{2}\/\d{2}$/
-    if (String(value).match(reg)) {
+    if (value.match(reg)) {
       setErrors(false)
       setErrorCardDate(false)
     } else {
@@ -112,9 +125,9 @@ function Checkout ({ setPopupWindow }) {
     }
   }
 
-  function checkCardCVC (value) {
+  function checkCardCVC (value: string) {
     const reg = /^\d{3}$/
-    if (String(value).match(reg)) {
+    if (value.match(reg)) {
       setErrors(false)
       setErrorCardCVC(false)
     } else {
@@ -126,7 +139,7 @@ function Checkout ({ setPopupWindow }) {
   return (
     <div className="checkout">
       <div className="checkout__form">
-        {confirm === false
+        {!confirm
           ? <div className="checkout__wrapper">
             <h2 className="checkout__title">Оформление заказа</h2>
             <div ref={checkoutFieldsRef} className="checkout__fields">
@@ -209,7 +222,6 @@ function Checkout ({ setPopupWindow }) {
             </div>
             <Button
               className="checkout__button-confirm"
-              button={true}
               onClick={confirmOrderHandler}
             >
               Подтвердить
@@ -219,7 +231,6 @@ function Checkout ({ setPopupWindow }) {
             <h2 className="checkout__title">Заказ подтвержден</h2>
             <Button
               className="checkout__button-confirm"
-              button={true}
               onClick={() => setPopupWindow(false)}
             >
               В каталог
@@ -239,15 +250,3 @@ function Checkout ({ setPopupWindow }) {
 }
 
 export default Checkout
-
-function Form () {
-  return (
-    <></>
-  )
-}
-
-function Confirm () {
-  return (
-    <></>
-  )
-}
