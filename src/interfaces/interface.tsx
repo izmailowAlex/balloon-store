@@ -1,26 +1,45 @@
-import { ChangeEvent, ChangeEventHandler, FocusEvent } from 'react'
+import { ChangeEvent, FocusEvent } from 'react';
 import { To } from 'react-router-dom'
 
+export interface IItem {
+  id: string
+  title: string
+  image: string
+  count: number
+  min: number
+  max: number
+  price: number
+  instock: boolean
+  discount: number
+  category: string
+  type: string
+  color: string
+  size: string
+  producer: string
+  country: string
+  description: string
+}
+
 export interface ICheckboxProps {
-  children: string | undefined
-  className: string | undefined
-  onChange?: () => Event | undefined
+  children?: string
+  className?: string
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 export interface IInputProps {
-    className: string
-    name?: string
-    value: string
-    placeholder?: string
-    label: string
-    error?: boolean
-    errorMessage?: string
-    success?: boolean
-    successMessage?: string
-    maxlength: number
-    onChange?: (event: ChangeEvent<HTMLInputElement>) => void
-    onFocus?: (event: FocusEvent<HTMLInputElement>) => void
-    onBlur?: (event: FocusEvent<HTMLInputElement>) => void
+  className: string
+  name?: string
+  value: string
+  placeholder?: string
+  label: string
+  error?: boolean
+  errorMessage?: string
+  success?: boolean
+  successMessage?: string
+  maxlength: number
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
+  onFocus?: (event: FocusEvent<HTMLInputElement>) => void
+  onBlur?: (event: FocusEvent<HTMLInputElement>) => void
 }
 
 export interface IButtonProps {
@@ -83,3 +102,8 @@ export interface IProductsLibrary {
 }
 
 export type Callback<T> = (data?: T) => void
+
+export interface IDualslider {
+  min: number
+  max: number
+}
