@@ -5,7 +5,7 @@ import Logo from '../../images/logo.svg'
 import './Header.css'
 import Actions from './Actions/Actions'
 
-function Header () {
+function Header (): JSX.Element {
   return (
     <div className="header">
       <div className="header__container container">
