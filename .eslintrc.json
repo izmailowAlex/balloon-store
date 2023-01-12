@@ -19,6 +19,8 @@
         "react"
     ],
     "rules": {
+        "no-empty-function": "off",
+        "@typescript-eslint/no-empty-function": "off",
         "comma-dangle": "off",
         "@typescript-eslint/comma-dangle": "off",
         "react/prop-types": "off",
