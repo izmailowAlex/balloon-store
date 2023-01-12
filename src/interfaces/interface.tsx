@@ -107,3 +107,12 @@ export interface IDualslider {
   min: number
   max: number
 }
+
+export interface IProductProps {
+  image: string
+  name: string
+  price: string
+  count: number
+  min: number
+  max: number
+}
