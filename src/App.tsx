@@ -7,11 +7,11 @@ import Footer from './components/Footer/Footer'
 import { data } from './data'
 import './App.css'
 
-interface IAppProps {
+interface IAppContext {
   productsLibrary: IProduct[]
 }
 
-export const AppContext = React.createContext({} as IAppProps)
+export const AppContext = React.createContext({} as IAppContext)
 
 function App (): JSX.Element {
   const [productsLibrary, setProductsLibrary] = useState<IProduct[]>(data)
