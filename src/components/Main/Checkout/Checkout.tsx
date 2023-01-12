@@ -5,7 +5,7 @@ import { ICheckoutProps } from '../../../interfaces/interface'
 import './Checkout.css'
 
 function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
-  const [errors, setErrors] = useState(false)
+  const [errors, setErrors] = useState(true)
   const [confirm, setConfirm] = useState(false)
   const [errorName, setErrorName] = useState(false)
   const [errorPhone, setErrorPhone] = useState(false)
@@ -46,10 +46,7 @@ function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
 
   function checkNameHandler (value: string): void {
     const reg = /^[а-яА-Яa-zA-Z]+ [а-яА-Яa-zA-Z]+$/
-    if (value === null) {
-      value = ''
-    }
-    if (value.match(reg)) {
+    if (value.match(reg) !== null) {
       setErrors(false)
       setErrorName(false)
     } else {
@@ -60,7 +57,7 @@ function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
 
   function checkPhoneHandler (value: string): void {
     const reg = /^(8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[-(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/
-    if (value.match(reg)) {
+    if (value.match(reg) !== null) {
       setErrors(false)
       setErrorPhone(false)
     } else {
@@ -70,8 +67,8 @@ function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
   }
 
   function checkAddressHandler (value: string): void {
-    const reg = /^[а-яА-Яa-zA-Z\d,./ ]+$/
-    if (value.match(reg)) {
+    const reg = /^([а-яА-Яa-zA-Z./ ]+), ([а-яА-Яa-zA-Z\d./ ]+), ([а-яА-Яa-zA-Z\d,./ ]+)$/
+    if (value.match(reg) !== null) {
       setErrors(false)
       setErrorAddress(false)
     } else {
@@ -82,7 +79,7 @@ function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
 
   function checkEmailHandler (value: string): void {
     const reg = /^[A-Z\d._%+-]+@[A-Z\d-]+.[A-Z]{2,4}$/i
-    if (value.match(reg)) {
+    if (value.match(reg) !== null) {
       setErrors(false)
       setErrorEmail(false)
     } else {
@@ -93,7 +90,7 @@ function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
 
   function checkCardholderName (value: string): void {
     const reg = /^[A-Z]+ [A-Z]+$/
-    if (value.match(reg)) {
+    if (value.match(reg) !== null) {
       setErrors(false)
       setErrorCardholderName(false)
     } else {
@@ -104,7 +101,7 @@ function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
 
   function checkCardNumber (value: string): void {
     const reg = /^\d{16}$/
-    if (value.match(reg)) {
+    if (value.match(reg) !== null) {
       setErrors(false)
       setErrorCardNumber(false)
     } else {
@@ -115,7 +112,7 @@ function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
 
   function checkCardDate (value: string): void {
     const reg = /^\d{2}\/\d{2}$/
-    if (value.match(reg)) {
+    if (value.match(reg) !== null) {
       setErrors(false)
       setErrorCardDate(false)
     } else {
@@ -126,7 +123,7 @@ function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
 
   function checkCardCVC (value: string): void {
     const reg = /^\d{3}$/
-    if (value.match(reg)) {
+    if (value.match(reg) !== null) {
       setErrors(false)
       setErrorCardCVC(false)
     } else {
@@ -148,13 +145,13 @@ function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
                 placeholder="Имя Фамилия"
                 maxlength={30}
                 error={errorName}
-                errorMessage="Неверный формат имени"
+                errorMessage="Неверный формат Имени Фамилии"
                 onBlur={(event) => { checkNameHandler(event.target.value) }}
               />
               <Input
                 className="checkout__input"
                 name="phone"
-                placeholder="Телефон"
+                placeholder="+375 (__) ___-__-__"
                 maxlength={14}
                 error={errorPhone}
                 errorMessage="Неверный формат телефона"
@@ -163,7 +160,7 @@ function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
               <Input
                 className="checkout__input"
                 name="address"
-                placeholder="Адрес доставки"
+                placeholder="г. Минск, ул. 50 лет Победы, д. 1"
                 maxlength={100}
                 error={errorAddress}
                 errorMessage="Неверный формат адреса"
@@ -172,7 +169,7 @@ function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
               <Input
                 className="checkout__input"
                 name="email"
-                placeholder="E-mail"
+                placeholder="email@example.com"
                 maxlength={50}
                 error={errorEmail}
                 errorMessage="Неверный формат E-mail"
@@ -232,10 +229,9 @@ function Checkout ({ setPopupWindow }: ICheckoutProps): JSX.Element {
               className="checkout__button-confirm"
               onClick={() => { setPopupWindow(false) }}
             >
-              В каталог
+              Продолжить покупки
             </Button>
           </div>
-
         }
         <button
           className="checkout__button-close"
