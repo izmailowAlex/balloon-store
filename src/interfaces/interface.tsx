@@ -111,7 +111,7 @@ export interface IDualslider {
 export interface IProductProps {
   image: string
   name: string
-  price: string
+  price: number
   count: number
   min: number
   max: number
