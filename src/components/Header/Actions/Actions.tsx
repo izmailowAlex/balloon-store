@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Actions.css'
 
-function Actions () {
+function Actions (): JSX.Element {
   return (
     <div className="actions-menu">
       <ul className="actions-menu__list">

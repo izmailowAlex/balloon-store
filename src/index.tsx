@@ -5,6 +5,7 @@ import App from './App'
 
 import './css/styles.css'
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const rootElement = document.getElementById('root') as HTMLElement
+const root = ReactDOM.createRoot(rootElement)
 
 root.render(<App />)

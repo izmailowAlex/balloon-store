@@ -1,19 +1,24 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { IProduct } from './interfaces/interface'
 import Header from './components/Header/Header'
 import Main from './components/Main/Main'
 import Footer from './components/Footer/Footer'
-import data from './data'
+import { data } from './data'
 import './App.css'
 
-export const AppContext = React.createContext()
+interface IAppContext {
+  productsLibrary: IProduct[]
+}
+const context: IAppContext = { productsLibrary: [] }
+export const AppContext = React.createContext(context)
 
-function App () {
-  const [productsLibrary, setProductsLibrary] = useState(data)
+function App (): JSX.Element {
+  const [productsLibrary] = useState<IProduct[]>(data)
 
   return (
     <div className="balloon">
-      <AppContext.Provider value={{ productsLibrary, setProductsLibrary }}>
+      <AppContext.Provider value={{ productsLibrary }}>
       <Router>
         <Header />
         <Main />

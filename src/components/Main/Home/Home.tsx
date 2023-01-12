@@ -2,7 +2,7 @@ import React from 'react'
 import './Home.css'
 import Button from '../../UI/Button/Button'
 
-function Home () {
+function Home (): JSX.Element {
   return (
     <div className="home">
       <div className="home__cover">

@@ -5,11 +5,14 @@ import Counter from '../../UI/Counter/Counter'
 import Button from '../../UI/Button/Button'
 import './ProductView.css'
 
-function ProductView () {
+function ProductView (): JSX.Element {
   const productID = useParams()
 
   const { productsLibrary } = useContext(AppContext)
   const currentProduct = productsLibrary.find((item) => item.id === productID.number)
+  if (currentProduct === undefined) {
+    return <></>
+  }
 
   return (
     <div className='product-view'>
@@ -24,14 +27,14 @@ function ProductView () {
         }
         <div className='product-view__price'>
           <span className='product-view__current-price'>{currentProduct.price}</span>
-          {currentProduct.discount
+          {currentProduct.discount !== 0
             ? <span className='product-view__old-price'>{Math.round(currentProduct.price * ((currentProduct.discount + 100) / 100))}</span>
             : ''
           }
         </div>
         <div className='product-view__control-group'>
           <span className='product-view__quantity'><Counter count={currentProduct.count} min={currentProduct.min} max={currentProduct.max}/></span>
-          <Button className='product-view__to-cart-button' button={true}>В корзину</Button>
+          <Button className='product-view__to-cart-button'>В корзину</Button>
         </div>
         <div className='product-view__description'>
           <div className='product-view__description-title'>Характеристики</div>

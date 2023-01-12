@@ -1,9 +1,10 @@
 import React from 'react'
 import './Product.css'
-import Checkbox from '../../../UI/Checkbox/Checkbox.tsx'
+import Checkbox from '../../../UI/Checkbox/Checkbox'
 import Counter from '../../../UI/Counter/Counter'
+import { IProductProps } from '../../../../interfaces/interface'
 
-function Product ({ image, name, price, count, min, max }) {
+function Product ({ image, name, price, count, min, max }: IProductProps): JSX.Element {
   return (
     <div className="product">
       <span className="product__checkbox">

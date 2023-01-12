@@ -1,14 +1,15 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
+import { IDualslider } from '../../../interfaces/interface'
 import './Dualslider.css'
-import Input from '../Input/Input.tsx'
+import Input from '../Input/Input'
 
-function Dualslider ({ min, max }) {
+function Dualslider ({ min, max }: IDualslider): JSX.Element {
   const [minVal, setMinVal] = useState(min)
   const [maxVal, setMaxVal] = useState(max)
-  const range = useRef(null)
+  const range = useRef<HTMLDivElement>(null)
 
   const getPercent = useCallback(
-    (value) => {
+    (value: number) => {
       return Math.round(((value - min) / (max - min)) * 100)
     },
     [min, max]
@@ -18,13 +19,15 @@ function Dualslider ({ min, max }) {
     const minPercent = getPercent(minVal)
     const maxPercent = getPercent(maxVal)
 
-    if (range.current) {
-      range.current.style.left = `${minPercent}%`
-      range.current.style.width = `${maxPercent - minPercent}%`
+    const currentElem = range.current
+
+    if (currentElem !== null) {
+      currentElem.style.left = `${minPercent}%`
+      currentElem.style.width = `${maxPercent - minPercent}%`
     }
   }, [minVal, maxVal, getPercent])
 
-  const changeMinValHandler = (value) => {
+  const changeMinValHandler = (value: number): void => {
     if (value < min || value > max) {
       value = minVal
     }
@@ -34,7 +37,7 @@ function Dualslider ({ min, max }) {
     setMinVal(value)
   }
 
-  const changeMaxValHandler = (value) => {
+  const changeMaxValHandler = (value: number): void => {
     if (value < min || value > max) {
       value = maxVal
     }
@@ -82,16 +85,16 @@ function Dualslider ({ min, max }) {
           value={String(minVal)}
           label={'от'}
           maxlength={String(max).length}
-          onFocus={(event) => event.target.select()}
-          onChange={changeMinValHandler}
+          onFocus={(event) => { event.target.select() }}
+          onChange={(event) => { changeMinValHandler(Number(event.target.value)) }}
         />
         <Input
           className="dualslider__max-value"
           value={String(maxVal)}
           label={'до'}
           maxlength={String(max).length}
-          onFocus={(event) => event.target.select()}
-          onChange={changeMaxValHandler}
+          onFocus={(event) => { event.target.select() }}
+          onChange={(event) => { changeMaxValHandler(Number(event.target.value)) }}
         />
       </div>
     </div>

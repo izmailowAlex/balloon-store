@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Button from '../../UI/Button/Button'
 import Input from '../../UI/Input/Input'
-import Checkbox from '../../UI/Checkbox/Checkbox.tsx'
+import Checkbox from '../../UI/Checkbox/Checkbox'
 import Product from './Product/Product'
 import Checkout from '../Checkout/Checkout'
 import './Cart.css'
 
-function Cart () {
+function Cart (): JSX.Element {
   const [popupWindow, setPopupWindow] = useState(false)
   return (
     <div className="cart">
@@ -19,7 +19,7 @@ function Cart () {
             </span>
             <a
               className="cart__cart-clear"
-              href="src/components/Main/Cart/Cart#"
+              href="#"
             >
               Очистить корзину
             </a>
@@ -58,8 +58,7 @@ function Cart () {
           />
           <Button
             className="cart__checkout"
-            button={true}
-            onClick={() => setPopupWindow(true)}
+            onClick={() => { setPopupWindow(true) }}
           >
             Оформить заказ
           </Button>
