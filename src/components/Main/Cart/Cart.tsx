@@ -19,7 +19,7 @@ function Cart (): JSX.Element {
             </span>
             <a
               className="cart__cart-clear"
-              href="src/components/Main/Cart/Cart#"
+              href="#"
             >
               Очистить корзину
             </a>
