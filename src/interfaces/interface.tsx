@@ -44,7 +44,7 @@ export interface IInputProps {
 
 export interface IButtonProps {
   children: string
-  className: string
+  className?: string
   to?: To
   onClick?: () => Event
 }
