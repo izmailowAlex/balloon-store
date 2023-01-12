@@ -96,14 +96,7 @@ function Filter (): JSX.Element {
     <div className="main__catalog-filter filter">
       <div className="filter__block">
         <div className="filter__category">
-          <span className="filter__block_category-title">Price, $</span>
-          <span className="filter__block_category-vector"></span>
-        </div>
-        <Dualslider min={0} max={1000} />
-      </div>
-      <div className="filter__block">
-        <div className="filter__category">
-          <span className="filter__block_category-title">Categories</span>
+          <span className="filter__block_category-title">Категория</span>
           <span className="filter__block_category-vector active"></span>
         </div>
         <ul className="filter__block_list">
@@ -122,7 +115,7 @@ function Filter (): JSX.Element {
       </div>
       <div className="filter__block">
         <div className="filter__category">
-          <span className="filter__block_category-title">Materials</span>
+          <span className="filter__block_category-title">Материал</span>
           <span className="filter__block_category-vector"></span>
         </div>
         <ul className="filter__block_list">
@@ -141,7 +134,7 @@ function Filter (): JSX.Element {
       </div>
       <div className="filter__block">
         <div className="filter__category">
-          <span className="filter__block_category-title">Colors</span>
+          <span className="filter__block_category-title">Цвет</span>
           <span className="filter__block_category-vector"></span>
         </div>
         <ul className="filter__block_list-colors">
@@ -156,6 +149,20 @@ function Filter (): JSX.Element {
             )
           })}
         </ul>
+      </div>
+      <div className="filter__block">
+        <div className="filter__category">
+          <span className="filter__block_category-title">Цена, ₽</span>
+          <span className="filter__block_category-vector"></span>
+        </div>
+        <Dualslider min={0} max={1000} />
+      </div>
+      <div className="filter__block">
+        <div className="filter__category">
+          <span className="filter__block_category-title">Количество, шт</span>
+          <span className="filter__block_category-vector"></span>
+        </div>
+        <Dualslider min={0} max={10000} />
       </div>
     </div>
   )
