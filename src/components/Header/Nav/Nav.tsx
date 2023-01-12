@@ -11,11 +11,6 @@ function Nav (): JSX.Element {
             Каталог
           </Link>
         </li>
-        <li className="nav__item">
-          <Link className="nav__link" to="/page404/">
-            Страница 404
-          </Link>
-        </li>
       </ul>
     </nav>
   )
