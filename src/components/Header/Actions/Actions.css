@@ -1,0 +1,87 @@
+.actions-menu__list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.actions-menu__item {
+  height: 20px;
+}
+
+.actions-menu__link {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+}
+
+.actions-menu__link:hover .icon,
+.actions-menu__link:hover .actions-menu__amount {
+  color: var(--secondary-color);
+}
+
+.actions-menu__quantity {
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  position: absolute;
+  z-index: 2;
+  top: -8px;
+  left: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: var(--white-color);
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  width: 20px;
+  height: 20px;
+}
+
+.actions-menu__amount {
+  display: inline-block;
+  font-family: Nunito, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 20px;
+  padding-left: 20px;
+  color: var(--base-color);
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.actions-menu__amount::after {
+  content: ' ₽';
+}
+
+.icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--base-color);
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.icon__svg {
+  fill: currentColor;
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}

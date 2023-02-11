@@ -1,0 +1,124 @@
+.dualslider {
+  position: relative;
+  height: 70px;
+  padding: 10px 0 0 0;
+}
+.dualslider__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.dualslider__track,
+.dualslider__range,
+.dualslider__min-value,
+.dualslider__max-value {
+  position: absolute;
+}
+
+.dualslider__track,
+.dualslider__range {
+  border-radius: 2px;
+  height: 4px;
+}
+
+.dualslider__track {
+  background-color: var(--grey-color);
+  width: 100%;
+  z-index: 1;
+}
+
+.dualslider__range {
+  background-color: var(--secondary-color);
+  z-index: 2;
+}
+
+.dualslider__min-value,
+.dualslider__max-value {
+  color: var(--grey-color);
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.dualslider__min-value {
+  width: 100px;
+  left: 0;
+}
+
+.dualslider__min-value .input__textbox,
+.dualslider__max-value .input__textbox {
+  padding: 10px 10px 10px 20px;
+}
+
+.dualslider__min-value input::before {
+  content: 'от';
+}
+
+.dualslider__max-value {
+  width: 100px;
+  right: 0;
+}
+
+.dualslider__max-value input::before {
+  content: 'до';
+}
+
+.dualslider__thumb,
+.dualslider__thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dualslider__thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  width: 100%;
+  outline: none;
+}
+
+.dualslider__thumb_left {
+  z-index: 3;
+}
+
+.dualslider__thumb_right {
+  z-index: 4;
+}
+
+.dualslider__thumb_upper {
+  z-index: 5;
+}
+
+.dualslider__thumb::-webkit-slider-thumb {
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 transparent;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.dualslider__thumb:hover::-webkit-slider-thumb {
+  box-shadow: 0 0 0 5px rgba(253, 120, 152, 0.2);
+}
+
+.dualslider__thumb::-moz-range-thumb {
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 transparent;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+.dualslider__thumb:hover::-moz-range-thumb {
+  box-shadow: 0 0 0 5px rgba(253, 120, 152, 0.2);
+}
